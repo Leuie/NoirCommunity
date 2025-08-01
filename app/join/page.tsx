@@ -17,8 +17,8 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Join NOIR Gaming Community - For Adult Gamers',
-  description: 'Join the premier gaming community for mature gamers. Connect with like-minded adults, participate in organized events, and enjoy a respectful gaming environment.',
+  title: 'Join the Community - For Mature Gamers',
+  description: 'Join the premier gaming community for mature gamers. Connect with like-minded adults, participate in events, and enjoy a respectful gaming environment.',
   keywords: ['adult gaming community', 'mature gamers', 'gaming discord', 'adult gaming group'],
 }
 
@@ -26,7 +26,7 @@ const membershipBenefits = [
   {
     icon: Users,
     title: "Mature Gaming Community",
-    description: "Connect with fellow adult gamers who understand work-life balance and appreciate quality gaming experiences.",
+    description: "Connect with fellow adult gamers who understand having an important work-life balance and appreciate quality gaming experiences.",
     highlight: "18+ Only",
   },
   {
@@ -63,6 +63,7 @@ const membershipBenefits = [
 
 const gameCategories = [
   { name: "MMORPGs", games: ["Final Fantasy XIV", "World of Warcraft", "Guild Wars 2"], color: "bg-neon-purple" },
+  { name: "ARPGs", games: ["Path of Exile I & II", "Torchlight Infinite", "Diablo 4"], color: "bg-neon-yellow" },
   { name: "FPS Games", games: ["Valorant", "CS2", "Overwatch 2"], color: "bg-neon-blue" },
   { name: "Strategy", games: ["Age of Empires", "Civilization VI", "StarCraft II"], color: "bg-neon-cyan" },
   { name: "Co-op Games", games: ["Deep Rock Galactic", "Destiny 2", "Monster Hunter"], color: "bg-neon-purple" },
