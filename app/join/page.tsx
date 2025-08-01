@@ -84,11 +84,11 @@ const testimonials = [
     age: "Unknown",
     role: "Resident Navy Vet",
     quote: "I'm just here so I don't get fined.",
-    games: ["No Man's Sky", "Civilization 6"],
+    games: ["No Man's Sky", "Civ VI"],
   },
   {
     name: "BigDers",
-    age: "35",
+    age: "27",
     role: "Karoake God",
     quote: "Nobody fucking with my drip.",
     games: ["CS2", "Valorant"],
