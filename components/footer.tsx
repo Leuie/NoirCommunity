@@ -17,7 +17,7 @@ export function Footer() {
               <div className="relative w-8 h-8">
                 <Image
                   src="/N.png"
-                  alt="NOIR Gaming Community"
+                  alt="NOIR Community"
                   fill
                   className="object-contain"
                 />
