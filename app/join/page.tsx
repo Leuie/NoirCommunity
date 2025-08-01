@@ -87,7 +87,7 @@ const testimonials = [
     games: ["No Man's Sky", "Civ VI"],
   },
   {
-    name: "BigDers",
+    name: "Andrew",
     age: "27",
     role: "Karoake God",
     quote: "Nobody fucking with my drip.",
