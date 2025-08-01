@@ -90,7 +90,7 @@ export function Footer() {
             © {currentYear} NOIR Gaming Community. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm mt-2 sm:mt-0">
-            Built with ❤️ for the gaming community
+            Built with ❤️.
           </p>
         </div>
       </div>
