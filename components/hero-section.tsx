@@ -59,9 +59,9 @@ export function HeroSection() {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join our thriving community of passionate gamers. Discover curated content, 
+            Join a growing community of passionate gamers. Discover curated content, 
             stay updated with the latest gaming news, and connect with fellow enthusiasts 
-            who share your love for gaming.
+            who share your love for gaming, technology, and pop culture.
           </p>
 
           {/* CTA Buttons */}
@@ -86,15 +86,15 @@ export function HeroSection() {
               <div className="flex items-center justify-center mb-2">
                 <Users className="h-8 w-8 text-neon-purple" />
               </div>
-              <div className="text-2xl font-bold text-foreground">1,000+</div>
+              <div className="text-2xl font-bold text-foreground">200+</div>
               <div className="text-sm text-muted-foreground">Active Members</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center mb-2">
                 <Trophy className="h-8 w-8 text-neon-blue" />
               </div>
-              <div className="text-2xl font-bold text-foreground">50+</div>
-              <div className="text-sm text-muted-foreground">Tournaments</div>
+              <div className="text-2xl font-bold text-foreground">30+</div>
+              <div className="text-sm text-muted-foreground">Games</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center mb-2">
