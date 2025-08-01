@@ -29,7 +29,7 @@ export function Header() {
             <div className="relative w-10 h-10">
               <Image
                 src="/N.png"
-                alt="NOIR Gaming Community"
+                alt="NOIR Community N logo"
                 fill
                 className="object-contain"
                 priority
