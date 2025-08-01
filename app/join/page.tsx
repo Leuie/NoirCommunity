@@ -73,25 +73,25 @@ const gameCategories = [
 
 const testimonials = [
   {
-    name: "Sarah M.",
+    name: "Ruby C.",
     age: "32",
-    role: "Software Engineer",
+    role: "ABG",
     quote: "Finally found a gaming community that gets it. No drama, just great games with great people.",
     games: ["FFXIV", "Valorant"],
   },
   {
-    name: "Mike R.",
-    age: "28",
-    role: "Marketing Manager",
-    quote: "The organized events fit perfectly around my work schedule. Best gaming decision I've made.",
-    games: ["WoW", "Apex"],
+    name: "Vextryyn",
+    age: "Unknown",
+    role: "Resident Navy Vet",
+    quote: "I'm just here so I don't get fined.",
+    games: ["No Man's Sky", "Civilization 6"],
   },
   {
-    name: "Jessica L.",
+    name: "BigDers",
     age: "35",
-    role: "Parent & Gamer",
-    quote: "Understanding community that respects family time while still having amazing gaming sessions.",
-    games: ["Destiny 2", "BG3"],
+    role: "Karoake God",
+    quote: "Nobody fucking with my drip.",
+    games: ["CS2", "Valorant"],
   },
 ]
 
