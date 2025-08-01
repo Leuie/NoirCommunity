@@ -87,7 +87,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} NOIR Gaming Community. All rights reserved.
+            © {currentYear} NOIR Community. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm mt-2 sm:mt-0">
             Built with ❤️.
