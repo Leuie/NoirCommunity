@@ -18,7 +18,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Join the Community - For Mature Gamers',
-  description: 'Join the premier gaming community for mature gamers. Connect with like-minded adults, participate in events, and enjoy a respectful gaming environment.',
+  description: 'Join a premier gaming community for mature gamers. Connect with like-minded adults, participate in events, and enjoy a respectful gaming environment.',
   keywords: ['adult gaming community', 'mature gamers', 'gaming discord', 'adult gaming group'],
 }
 
@@ -26,7 +26,7 @@ const membershipBenefits = [
   {
     icon: Users,
     title: "Mature Gaming Community",
-    description: "Connect with fellow adult gamers who understand having an important work-life balance and appreciate quality gaming experiences.",
+    description: "Connect with fellow gamers who understand having an important work-life balance and appreciate quality gaming experiences.",
     highlight: "18+ Only",
   },
   {
@@ -109,16 +109,16 @@ export default function JoinPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
               Join <span className="neon-text font-jarvish-blurry">NOIR</span>
               <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground/90 mt-2">
-                Where Adult Gamers Belong
+                Where Gaming Connects You
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Connect with mature gamers who understand that gaming is more than a hobby—it's a passion that deserves respect, strategy, and genuine community.
+              Connect with mature gamers who understand that gaming is more than a hobby. It is a passion that can promote mental health, development, strategy and aid in personal growth. We hope to show that gaming can expand self-worth & deserves respect amongst our community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button asChild size="lg" className="btn-primary text-lg px-8 py-4 text-white">
-                <Link href="https://www.noircommunity.com/discord" target="_blank">
-                  Join Discord Now
+                <Link href="noircommunity.com/discord" target="_blank">
+                  Join us on Discord!
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -151,12 +151,12 @@ export default function JoinPage() {
         </div>
       </section>
 
-      {/* Why Adult Gamers Choose NOIR */}
+      {/* Why Gamers Choose NOIR */}
       <section id="benefits" className="section-padding bg-background">
         <div className="container-noir">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Why Adult Gamers Choose <span className="neon-text font-jarvish-blurry">NOIR</span>
+              Why Gamers Choose <span className="neon-text font-jarvish-blurry">NOIR</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We understand the unique needs of adult gamers. Here's what sets us apart from typical gaming communities.
