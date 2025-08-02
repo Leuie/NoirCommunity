@@ -10,9 +10,22 @@ export default defineConfig({
   projectId: 'nbeqhsdj',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool(),
+    visionTool({
+      // Optional: configure vision tool
+      defaultApiVersion: '2024-01-01',
+    }),
+  ],
 
   schema: {
     types: schemaTypes,
   },
+  
+  // Studio configuration
+  studio: {
+    components: {
+      // This helps with React component resolution
+    }
+  }
 })
