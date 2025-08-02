@@ -30,6 +30,12 @@ const hasSupabaseConfig = () => {
 export const supabase = hasSupabaseConfig() ? createClient(supabaseUrl, supabaseAnonKey) : null
 
 // Client component client
+export const createSupabaseClient = () => {
+  if (!hasSupabaseConfig()) {
+    return null
+  }
+  return createClientComponentClient()
+}
 
 
 // Database types (will be generated from your schema)
