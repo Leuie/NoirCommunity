@@ -117,7 +117,7 @@ export default function JoinPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button asChild size="lg" className="btn-primary text-lg px-8 py-4 text-white">
-                <Link href="noircommunity.com/discord" target="_blank">
+                <Link href="https://www.noircommunity.com/discord" target="_blank">
                   Join us on Discord!
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
