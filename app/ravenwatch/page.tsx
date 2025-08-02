@@ -58,7 +58,7 @@ const supportedGames = [
   {
     name: "Path of Exile II",
     description: "The highly anticipated sequel featuring a new seven-act campaign, updated graphics, and refined gameplay mechanics while maintaining the depth that made the original legendary.",
-    image: "https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://i.imgur.com/yLpjE6z.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "New",
     playerCount: "Very High",
   },
