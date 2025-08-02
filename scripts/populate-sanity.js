@@ -1,3 +1,5 @@
+require('dotenv').config({ path: './sanity.env' });
+
 const { createClient } = require('@sanity/client')
 
 const client = createClient({
