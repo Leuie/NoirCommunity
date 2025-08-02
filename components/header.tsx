@@ -99,10 +99,6 @@ export function Header() {
               {item.dropdown ? (
                 <div className="flex items-center space-x-1 text-sm font-medium text-foreground/80 hover:text-foreground hover:text-glow transition-all duration-200 cursor-pointer">
                   <span>{item.name}</span>
-                  aria-haspopup="true"
-                  aria-expanded={dropdownOpen === item.name}
-                  role="button"
-                  tabIndex={0}
                   <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${
                     dropdownOpen === item.name ? 'rotate-180' : ''
                   }`} />
