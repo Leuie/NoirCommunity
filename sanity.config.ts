@@ -10,10 +10,6 @@ export default defineConfig({
   projectId: 'nbeqhsdj',
   dataset: 'production',
 
-  server: {
-    port: 3334
-  },
-
   // Authentication and API configuration
   token: process.env.SANITY_API_TOKEN,
   useCdn: false, // Disable CDN for authenticated requests
@@ -30,9 +26,14 @@ export default defineConfig({
     types: schemaTypes,
   },
   
-  // CORS and authentication settings
-  cors: {
-    origin: ['http://localhost:3000', 'http://localhost:3334'],
-    credentials: true
+  // Development server configuration
+  server: {
+    port: 3333,
+    host: 'localhost'
+  },
+
+  // Studio configuration
+  studio: {
+    basePath: '/'
   }
 })
