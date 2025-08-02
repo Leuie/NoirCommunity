@@ -36,7 +36,7 @@ export function Header() {
               />
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-display font-bold neon-text">
+              <span className="text-xl font-jarvish-blurry font-bold neon-text">
                 NOIR
               </span>
               <span className="text-sm text-muted-foreground ml-2 hidden md:inline">

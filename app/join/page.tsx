@@ -107,7 +107,7 @@ export default function JoinPage() {
               18+ Gaming Community
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
-              Join <span className="neon-text">NOIR</span>
+              Join <span className="neon-text font-jarvish-blurry">NOIR</span>
               <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground/90 mt-2">
                 Where Adult Gamers Belong
               </span>
@@ -156,7 +156,7 @@ export default function JoinPage() {
         <div className="container-noir">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Why Adult Gamers Choose <span className="neon-text">NOIR</span>
+              Why Adult Gamers Choose <span className="neon-text font-jarvish-blurry">NOIR</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We understand the unique needs of adult gamers. Here's what sets us apart from typical gaming communities.
@@ -236,7 +236,7 @@ export default function JoinPage() {
               What Our <span className="neon-text">Members</span> Say
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real testimonials from adult gamers who found their gaming home with NOIR.
+              Real testimonials from adult gamers who found their gaming home with <span className="font-jarvish-blurry neon-text">NOIR</span>.
             </p>
           </div>
 

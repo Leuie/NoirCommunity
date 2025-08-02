@@ -44,7 +44,7 @@ export function HeroSection() {
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold mb-6">
-            <span className="block neon-text animate-glow">
+            <span className="block neon-text animate-glow font-jarvish-blurry">
               NOIR
             </span>
             <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground/90 mt-2">

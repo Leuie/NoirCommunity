@@ -13,6 +13,7 @@ const config: Config = {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         display: ['Orbitron', 'system-ui', 'sans-serif'],
+        'jarvish-blurry': ['var(--font-jarvish-blurry)', 'system-ui', 'sans-serif'],
       },
       colors: {
         // NOIR Gaming brand colors

@@ -48,7 +48,7 @@ export function FeaturesSection() {
       <div className="container-noir">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6">
-            Why Choose <span className="neon-text">NOIR</span>?
+            Why Choose <span className="neon-text font-jarvish-blurry">NOIR</span>?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We're more than just a gaming community - we're a family of gamers dedicated to 
