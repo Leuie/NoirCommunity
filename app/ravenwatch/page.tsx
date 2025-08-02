@@ -51,7 +51,7 @@ const supportedGames = [
   {
     name: "Path of Exile I",
     description: "The original free-to-play ARPG that redefined the genre. With its complex passive skill tree and ethical free-to-play model, PoE offers endless character possibilities.",
-    image: "https://images.pexels.com/photos/1666065/pexels-photo-1666065.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/5ElTlKp.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
     playerCount: "Very High",
   },
