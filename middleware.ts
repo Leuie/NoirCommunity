@@ -1,10 +1,17 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 
 export function middleware(request: NextRequest) {
-  // Simple middleware without Supabase for static export
+  // Handle auth callback route
+  if (request.nextUrl.pathname === '/auth/callback') {
+    return NextResponse.next()
+  }
+
+  // For static export compatibility, don't run auth middleware on other routes
   return NextResponse.next()
 }
+
 export const config = {
   matcher: [
     /*
@@ -14,6 +21,6 @@ export const config = {
      * - favicon.ico (favicon file)
      * Feel free to modify this pattern to include more paths.
      */
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/auth/callback',
   ],
 }
