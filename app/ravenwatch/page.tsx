@@ -30,7 +30,7 @@ const supportedGames = [
   {
     name: "Hero Siege",
     description: "A hack 'n' slash game with roguelike elements. Choose from over 20 classes and explore randomly generated worlds filled with loot, monsters, and challenging bosses.",
-    image: "https://images.pexels.com/photos/1174746/pexels-photo-1174746.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/jnP5sHs.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
     playerCount: "Medium",
   },
