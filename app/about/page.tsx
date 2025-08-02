@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { client, teamMembersQuery } from '@/lib/sanity';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
