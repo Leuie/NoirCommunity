@@ -10,6 +10,10 @@ export default defineConfig({
   projectId: 'nbeqhsdj',
   dataset: 'production',
 
+  server: {
+    port: 3334
+  },
+
   plugins: [
     structureTool(),
     visionTool({
