@@ -1,41 +1,13 @@
 'use client'
 
-import { Metadata } from 'next'
-import { useState, useEffect } from 'react'
-import { createSupabaseClient } from '@/lib/supabase'
+import { useState } from 'react'
 import { CommunityPreview } from '@/components/community-preview'
-import { CreatePost } from '@/components/community/create-post'
-import { CommunityPosts } from '@/components/community/community-posts'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { Users, MessageSquare, TrendingUp } from 'lucide-react'
-import type { User } from '@supabase/supabase-js'
+import Link from 'next/link'
 
 export default function CommunityPage() {
-  const [user, setUser] = useState<User | null>(null)
-  const [refreshTrigger, setRefreshTrigger] = useState(0)
-  const supabase = createSupabaseClient()
-
-  useEffect(() => {
-    const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      setUser(user)
-    }
-
-    getUser()
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setUser(session?.user ?? null)
-      }
-    )
-
-    return () => subscription.unsubscribe()
-  }, [supabase.auth])
-
-  const handlePostCreated = () => {
-    setRefreshTrigger(prev => prev + 1)
-  }
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -82,10 +54,20 @@ export default function CommunityPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-6">
-              {user && (
-                <CreatePost onPostCreated={handlePostCreated} />
-              )}
-              <CommunityPosts refreshTrigger={refreshTrigger} />
+              <Card className="card-noir text-center py-12">
+                <CardContent>
+                  <MessageSquare className="w-12 h-12 text-neon-purple mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Join Our Discord Community</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Connect with fellow gamers, share your achievements, and be part of the conversation on our Discord server.
+                  </p>
+                  <Button asChild className="btn-primary">
+                    <Link href="https://discord.gg/noircommunity" target="_blank">
+                      Join Discord Server
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Sidebar */}
@@ -103,18 +85,21 @@ export default function CommunityPage() {
                 </CardContent>
               </Card>
 
-              {!user && (
-                <Card className="card-noir">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Join the Conversation</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Sign in to share your gaming moments, connect with other players, and be part of the community.
-                    </p>
-                  </CardContent>
-                </Card>
-              )}
+              <Card className="card-noir">
+                <CardHeader>
+                  <CardTitle className="text-lg">Join the Conversation</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Join our Discord server to share your gaming moments, connect with other players, and be part of the community.
+                  </p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href="https://discord.gg/noircommunity" target="_blank">
+                      Join Discord
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
