@@ -40,6 +40,7 @@ const jarvishBlurry = localFont({
   ],
   variable: '--font-jarvish-blurry',
   display: 'swap',
+  optimizeFile: false,
 });
 
 export const metadata: Metadata = {
