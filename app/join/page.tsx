@@ -63,7 +63,7 @@ const membershipBenefits = [
 
 const gameCategories = [
   { name: "MMORPGs", games: ["Final Fantasy XIV", "World of Warcraft", "Guild Wars 2"], color: "bg-neon-purple" },
-  { name: "ARPGs", games: ["Path of Exile I & II", "Torchlight Infinite", "Diablo 4"], color: "bg-neon-yellow" },
+  { name: "ARPGs", games: ["Diablo IV", "Hero Siege", "Last Epoch", "No Rest For The Wicked", "Path of Exile I", "Path of Exile II", "Torchlight Infinite", "The Slormancer"], color: "bg-neon-purple" },
   { name: "FPS Games", games: ["Valorant", "CS2", "Overwatch 2", "Marvel Rivals"], color: "bg-neon-blue" },
   { name: "Strategy", games: ["Age of Empires", "Civilization VI", "StarCraft II"], color: "bg-neon-cyan" },
   { name: "Co-op Games", games: ["Deep Rock Galactic", "Destiny 2", "Monster Hunter"], color: "bg-neon-purple" },
