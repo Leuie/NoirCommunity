@@ -170,7 +170,7 @@ export function NewsPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {newsArticles.map((article) => (
+          {articles.map((article) => (
             <Card key={article._id} className="card-noir overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
