@@ -80,9 +80,6 @@ export function Header() {
               <span className="text-xl font-jarvish-blurry font-bold neon-text px-1 py-0.5">
                 NOIR
               </span>
-              <span className="text-sm text-muted-foreground ml-2 hidden md:inline">
-                Gaming Community
-              </span>
             </div>
           </Link>
         </div>
@@ -138,9 +135,6 @@ export function Header() {
 
         {/* Right side - Social Links and Theme Toggle */}
         <div className="flex items-center space-x-4">
-          <div className="hidden lg:block">
-            <SocialLinks />
-          </div>
           <AuthButton />
           
           {/* Mobile menu button */}
@@ -207,9 +201,6 @@ export function Header() {
                 )}
               </div>
             ))}
-            <div className="px-3 py-2 border-t border-border/40 mt-4 pt-4">
-              <SocialLinks />
-            </div>
           </div>
         </div>
       )}
