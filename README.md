@@ -1,6 +1,6 @@
 # NOIR Community Gaming Portal
 
-Welcome to the official repository for the **NOIR Community Gaming Website**, a dynamic hub built to unite gamers, creators, and developers under a shared digital banner. This project is designed to be scalable, content-rich, and community-driven — powered by modern web technologies.
+Welcome to the official repository for the **NOIR Community Gaming Website**, a dynamic hub built to unite gamers, creators, and developers under a shared digital banner. This project is designed to be scalable, content-rich, and community-driven. Powered by modern web technologies.
 
 ## Live Site
 Visit the production site: [www.noircommunity.com](https://www.noircommunity.com)
