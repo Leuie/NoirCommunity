@@ -159,7 +159,7 @@ export default function JoinPage() {
               Why Gamers Choose <span className="neon-text font-jarvish-blurry">NOIR</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We understand the unique needs of adult gamers. Here's what sets us apart from typical gaming communities.
+              We understand the unique needs of gamers. Here's what sets us apart from typical gaming communities.
             </p>
           </div>
 
