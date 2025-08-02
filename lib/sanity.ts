@@ -54,3 +54,25 @@ export const teamMembersQuery = `*[_type == "teamMember"] | order(order asc) {
   image,
   order
 }`
+
+// Test queries for debugging
+export const testQueries = {
+  // Check if any documents exist
+  allDocuments: `*[defined(_id)] | order(_createdAt desc) [0...10] {
+    _id,
+    _type,
+    _createdAt
+  }`,
+  
+  // Check document types
+  documentTypes: `array::unique(*[]._type)`,
+  
+  // Count documents by type
+  documentCounts: `{
+    "newsArticles": count(*[_type == "newsArticle"]),
+    "communityPosts": count(*[_type == "communityPost"]),
+    "teamMembers": count(*[_type == "teamMember"]),
+    "authors": count(*[_type == "author"]),
+    "communityMembers": count(*[_type == "communityMember"])
+  }`
+}
