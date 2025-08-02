@@ -37,14 +37,14 @@ const supportedGames = [
   {
     name: "Last Epoch",
     description: "A time-traveling ARPG with deep character customization and crafting systems. Master the timeline and forge your destiny across different eras.",
-    image: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/CzgjxyX.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
     playerCount: "High",
   },
   {
     name: "No Rest For The Wicked",
     description: "A dark fantasy ARPG with stunning hand-drawn visuals. Explore a plague-ridden kingdom and uncover the truth behind the spreading madness.",
-    image: "https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/CzgjxyX.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
     playerCount: "Medium",
   },
