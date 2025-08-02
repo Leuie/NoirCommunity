@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'NOIR Gaming Community',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  projectId: 'nbeqhsdj',
+  dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
 
