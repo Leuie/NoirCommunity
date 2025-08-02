@@ -1,41 +1,115 @@
+import * as React from 'react';
 import { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { client, teamMembersQuery } from '@/lib/sanity';
 
 export const metadata: Metadata = {
   title: 'About NOIR Gaming Community',
   description: 'Learn about the NOIR Gaming Community\'s mission, values, what we offer, and why you should join our passionate gaming family.',
 };
 
-const teamMembers = [
+interface TeamMember {
+  _id: string
+  name: string
+  role: string
+  description: string
+  image?: any
+  order: number
+}
+
+// Fallback data
+const fallbackTeamMembers = [
   {
+    _id: "1",
     name: "Leuie",
     role: "Founder & Lead Developer",
     description: "Visionary behind NOIR, passionate about gaming and community building.",
-    image: "https://i.imgur.com/Kj1YaTI.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+    order: 1,
   },
   {
+    _id: "2",
     name: "Ward",
     role: "Community Manager",
     description: "The heart of NOIR, ensuring a welcoming and engaging environment for all members.",
-    image: "https://i.imgur.com/8AmuFBl.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+    order: 2,
   },
   {
+    _id: "3",
     name: "LeerOne",
     role: "Content Strategist",
     description: "Conceives and iterates on the latest graphics. Creating engaging content for the community.",
-    image: "https://i.imgur.com/sgYVMV6.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+    order: 3,
   },
-    {
+  {
+    _id: "4",
     name: "Chuyo",
     role: "Security Architect",
     description: "Cybersecurity Professional by day, Gamer by night.",
-    image: "https://imgur.com/ZgjDtz3.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+    order: 4,
   },
 ];
 
+function TeamSection() {
+  const [teamMembers, setTeamMembers] = React.useState<TeamMember[]>([])
+  const [loading, setLoading] = React.useState(true)
+
+  React.useEffect(() => {
+    async function fetchTeamMembers() {
+      try {
+        const data = await client.fetch(teamMembersQuery)
+        setTeamMembers(data.length > 0 ? data : fallbackTeamMembers)
+      } catch (error) {
+        console.log('Using fallback data:', error)
+        setTeamMembers(fallbackTeamMembers)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchTeamMembers()
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[1, 2, 3, 4].map((i) => (
+          <Card key={i} className="card-noir flex flex-col items-center text-center p-6">
+            <div className="w-24 h-24 rounded-full bg-muted animate-pulse mb-4" />
+            <div className="h-6 bg-muted rounded animate-pulse mb-2 w-3/4" />
+            <div className="h-4 bg-muted rounded animate-pulse mb-4 w-1/2" />
+            <div className="h-4 bg-muted rounded animate-pulse w-full" />
+          </Card>
+        ))}
+      </div>
+    )
+  }
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {teamMembers.map((member) => (
+        <Card key={member._id} className="card-noir flex flex-col items-center text-center p-6">
+          <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-neon-purple">
+            <img
+              src={member.image ? `https://cdn.sanity.io/images/nbeqhsdj/production/${member.image.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=100&h=100&fit=crop` : `https://i.imgur.com/Kj1YaTI.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`}
+              alt={member.name}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+          <CardTitle className="text-xl font-display mb-2">{member.name}</CardTitle>
+          <CardDescription className="text-sm text-muted-foreground mb-4">
+            {member.role}
+          </CardDescription>
+          <p className="text-sm text-foreground/90 leading-relaxed">
+            {member.description}
+          </p>
+        </Card>
+      ))}
+    </div>
+  )
+}
 
 export default function AboutPage() {
   return (
@@ -207,26 +281,7 @@ export default function AboutPage() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
             Get to know the dedicated individuals who make the <span className="font-jarvish-blurry neon-text px-1 py-0.5 inline-block">NOIR</span> Gaming Community thrive.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="card-noir flex flex-col items-center text-center p-6">
-                <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-neon-purple">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-xl font-display mb-2">{member.name}</CardTitle>
-                <CardDescription className="text-sm text-muted-foreground mb-4">
-                  {member.role}
-                </CardDescription>
-                <p className="text-sm text-foreground/90 leading-relaxed">
-                  {member.description}
-                </p>
-              </Card>
-            ))}
-          </div>
+          <TeamSection />
         </div>
       </section>
     </div>
