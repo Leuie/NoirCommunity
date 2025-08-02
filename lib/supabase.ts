@@ -34,7 +34,7 @@ export const createSupabaseClient = () => {
   if (!hasSupabaseConfig()) {
     return null
   }
-  return createClientComponentClient()
+  return createClient(supabaseUrl, supabaseAnonKey)
 }
 
 
