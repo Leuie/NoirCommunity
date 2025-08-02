@@ -4,13 +4,18 @@ import { useState, useEffect } from 'react'
 import { createSupabaseClient } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { User, LogOut } from 'lucide-react'
-
+import { supabase } from '@/lib/supabase'
 export function AuthButton() {
   const [user, setUser] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const supabase = createSupabaseClient()
 
   useEffect(() => {
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
+
     // Get initial session
     const getSession = async () => {
       const { data: { session } } = await supabase.auth.getSession()
@@ -32,6 +37,8 @@ export function AuthButton() {
   }, [supabase.auth])
 
   const handleSignIn = async () => {
+    if (!supabase) return
+    
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
@@ -46,12 +53,24 @@ export function AuthButton() {
   }
 
   const handleSignOut = async () => {
+    if (!supabase) return
+    
     try {
       const { error } = await supabase.auth.signOut()
       if (error) throw error
     } catch (error) {
       console.error('Error signing out:', error)
     }
+  }
+
+  // If no Supabase configuration, show placeholder
+  if (!supabase) {
+    return (
+      <Button variant="outline" disabled>
+        <User className="w-4 h-4 mr-2" />
+        Configure Supabase
+      </Button>
+    )
   }
 
   if (loading) {
