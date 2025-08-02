@@ -4,6 +4,7 @@ import communityPost from './communityPost'
 import communityMember from './communityMember'
 import teamMember from './teamMember'
 import blockContent from './blockContent'
+import postType from './postType'
 
 export const schemaTypes = [
   newsArticle,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   communityMember,
   teamMember,
   blockContent,
+  postType,
 ]
