@@ -23,7 +23,7 @@ export function Footer() {
                 />
               </div>
               <span className="text-lg font-display font-bold neon-text">
-                <span className="font-jarvish-blurry">NOIR</span> Gaming Community
+                <span className="font-jarvish-blurry px-1 py-0.5 inline-block">NOIR</span> Gaming Community
               </span>
             </div>
             <p className="text-muted-foreground text-sm max-w-md">

@@ -37,8 +37,8 @@ export default function AboutPage() {
       <section className="relative py-24 sm:py-32 lg:py-40 bg-background/50 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
         <div className="relative z-10 container-noir text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 neon-text">
-            About <span className="font-jarvish-blurry">NOIR</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
+            About <span className="font-jarvish-blurry neon-text px-2 py-1 inline-block">NOIR</span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Discover the passion, purpose, and people behind the Community.
@@ -52,10 +52,10 @@ export default function AboutPage() {
         <div className="container-noir grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-              What We <span className="neon-text">Offer</span>
+              What We <span className="neon-text font-jarvish-blurry px-1 py-0.5 inline-block">Offer</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              <span className="font-jarvish-blurry neon-text">NOIR</span> Gaming Community provides a comprehensive platform for gamers to connect, compete, and grow.
+              <span className="font-jarvish-blurry neon-text px-1 py-0.5 inline-block">NOIR</span> Gaming Community provides a comprehensive platform for gamers to connect, compete, and grow.
             </p>
             <ul className="space-y-4 text-muted-foreground text-base">
               <li><span className="font-semibold text-foreground">Inclusivity:</span> We welcome everyone, regardless of their gaming preferences or experience.</li>
@@ -79,10 +79,10 @@ export default function AboutPage() {
       <section className="section-padding bg-background/50">
         <div className="container-noir text-center">
           <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-            What We <span className="neon-text">Offer</span>
+            What We <span className="neon-text font-jarvish-blurry px-1 py-0.5 inline-block">Offer</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-            NOIR Gaming Community provides a comprehensive platform for gamers to connect, compete, and grow.
+            <span className="font-jarvish-blurry neon-text px-1 py-0.5 inline-block">NOIR</span> Gaming Community provides a comprehensive platform for gamers to connect, compete, and grow.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="card-noir">
@@ -131,7 +131,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-muted-foreground">
-                  Showcase your streams, videos, and fan art. Get feedback and grow your audience within <span className="font-jarvish-blurry neon-text">NOIR</span>.
+                  Showcase your streams, videos, and fan art. Get feedback and grow your audience within <span className="font-jarvish-blurry neon-text px-1 py-0.5 inline-block">NOIR</span>.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -153,7 +153,7 @@ export default function AboutPage() {
       <section className="section-padding bg-background">
         <div className="container-noir text-center">
           <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-            Why Join <span className="neon-text font-jarvish-blurry">NOIR</span>?
+            Why Join <span className="neon-text font-jarvish-blurry px-1 py-0.5 inline-block">NOIR</span>?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
             We are more than just a gaming community; we are a family. Here's what sets us apart:
@@ -165,7 +165,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-muted-foreground leading-relaxed">
-                  Unlike other large, impersonal communities, <span className="font-jarvish-blurry neon-text">NOIR</span> focuses on genuine connections. We foster an environment where every member feels valued, heard, and part of something special. Our moderators and leadership are actively engaged, ensuring a positive experience for all.
+                  Unlike other large, impersonal communities, <span className="font-jarvish-blurry neon-text px-1 py-0.5 inline-block">NOIR</span> focuses on genuine connections. We foster an environment where every member feels valued, heard, and part of something special. Our moderators and leadership are actively engaged, ensuring a positive experience for all.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -195,10 +195,10 @@ export default function AboutPage() {
       <section className="section-padding bg-background/50">
         <div className="container-noir text-center">
           <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-            Meet the <span className="neon-text">Squad</span>
+            Meet the <span className="neon-text font-jarvish-blurry px-1 py-0.5 inline-block">Squad</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-            Get to know the dedicated individuals who make the <span className="font-jarvish-blurry neon-text">NOIR</span> Gaming Community thrive.
+            Get to know the dedicated individuals who make the <span className="font-jarvish-blurry neon-text px-1 py-0.5 inline-block">NOIR</span> Gaming Community thrive.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (

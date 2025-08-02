@@ -107,7 +107,7 @@ export default function JoinPage() {
               18+ Gaming Community
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
-              Join <span className="neon-text font-jarvish-blurry">NOIR</span>
+              Join <span className="neon-text font-jarvish-blurry px-2 py-1 inline-block">NOIR</span>
               <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground/90 mt-2">
                 Where Gaming Connects You
               </span>
@@ -156,7 +156,7 @@ export default function JoinPage() {
         <div className="container-noir">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Why Gamers Choose <span className="neon-text font-jarvish-blurry">NOIR</span>
+              Why Gamers Choose <span className="neon-text font-jarvish-blurry px-1 py-0.5 inline-block">NOIR</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We understand the unique needs of gamers. Here's what sets us apart from typical gaming communities.
@@ -233,10 +233,10 @@ export default function JoinPage() {
         <div className="container-noir">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-              What Our <span className="neon-text">Members</span> Say
+              What Our <span className="neon-text font-jarvish-blurry px-1 py-0.5 inline-block">Members</span> Say
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real testimonials from gamers who found their home with <span className="font-jarvish-blurry neon-text">NOIR</span>.
+              Real testimonials from gamers who found their home with <span className="font-jarvish-blurry neon-text px-1 py-0.5 inline-block">NOIR</span>.
             </p>
           </div>
 
@@ -272,7 +272,7 @@ export default function JoinPage() {
         <div className="container-noir text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-              Ready to Level Up Your <span className="neon-text">Gaming Experience</span>?
+              Ready to Level Up Your <span className="neon-text font-jarvish-blurry px-1 py-0.5 inline-block">Gaming Experience</span>?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Join hundreds of adult gamers who've found their perfect gaming community. 
