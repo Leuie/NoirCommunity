@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -17,12 +16,6 @@ import {
   AlertTriangle,
   CheckCircle
 } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Official Art & Media - NOIR Gaming Community',
-  description: 'Download official NOIR Gaming Community artwork, fonts, logos, and media assets for content creation and community projects.',
-  keywords: ['NOIR art', 'gaming community assets', 'brand resources', 'logos', 'fonts'],
-}
 
 const brandColors = [
   { name: 'NOIR Purple', hex: '#a855f7', rgb: '168, 85, 247', usage: 'Primary brand color' },
