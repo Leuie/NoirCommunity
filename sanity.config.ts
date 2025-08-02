@@ -14,10 +14,14 @@ export default defineConfig({
     port: 3334
   },
 
+  // Authentication and API configuration
+  token: process.env.SANITY_API_TOKEN,
+  useCdn: false, // Disable CDN for authenticated requests
+  apiVersion: '2024-01-01',
+
   plugins: [
     structureTool(),
     visionTool({
-      // Optional: configure vision tool
       defaultApiVersion: '2024-01-01',
     }),
   ],
@@ -26,10 +30,9 @@ export default defineConfig({
     types: schemaTypes,
   },
   
-  // Studio configuration
-  studio: {
-    components: {
-      // This helps with React component resolution
-    }
+  // CORS and authentication settings
+  cors: {
+    origin: ['http://localhost:3000', 'http://localhost:3334'],
+    credentials: true
   }
 })
