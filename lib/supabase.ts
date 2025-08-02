@@ -4,8 +4,21 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
 
-// Only create client if environment variables are available
-const hasSupabaseConfig = supabaseUrl && supabaseAnonKey
+// Only create client if environment variables are available and valid
+const isValidUrl = (url: string) => {
+  try {
+    new URL(url)
+    return true
+  } catch {
+    return false
+  }
+}
+
+const hasSupabaseConfig = supabaseUrl && 
+                         supabaseAnonKey && 
+                         isValidUrl(supabaseUrl) && 
+                         !supabaseUrl.includes('your_supabase_project_url_here') &&
+                         !supabaseAnonKey.includes('your_supabase_anon_key_here')
 
 // Client-side Supabase client
 export const supabase = hasSupabaseConfig ? createClient(supabaseUrl, supabaseAnonKey) : null
