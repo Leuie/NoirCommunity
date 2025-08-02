@@ -4,9 +4,19 @@ const client = createClient({
   projectId: 'qgn02sj5',
   dataset: 'production',
   useCdn: false,
-  token: process.env.SANITY_AUTH_TOKEN,
+  token: process.env.SANITY_AUTH_TOKEN || 'your-new-token-here',
   apiVersion: '2024-01-01',
 })
+
+// Check if token is available
+if (!process.env.SANITY_AUTH_TOKEN) {
+  console.error('❌ SANITY_AUTH_TOKEN is not set in sanity.env file')
+  console.log('Please follow these steps:')
+  console.log('1. Go to https://sanity.io/manage/personal/tokens')
+  console.log('2. Create a new token with "Editor" or "Administrator" permissions')
+  console.log('3. Replace the token in your sanity.env file')
+  process.exit(1)
+}
 
 // Authors
 const authors = [
