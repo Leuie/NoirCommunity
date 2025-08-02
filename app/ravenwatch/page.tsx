@@ -144,7 +144,7 @@ export default function RavenwatchPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button asChild size="lg" className="btn-primary text-lg px-8 py-4 text-white">
                 <Link href="https://discord.gg/ravenwatch" target="_blank">
-                  Join Ravenwatch Discord
+                  Join the Ravenwatch Discord
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
