@@ -65,14 +65,14 @@ const supportedGames = [
   {
     name: "The Slormancer",
     description: "A 2D pixel-art ARPG with deep RPG mechanics. Battle through hordes of enemies with satisfying combat and extensive character progression systems.",
-    image: "https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/5J4Luja.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
-    playerCount: "Medium",
+    playerCount: "Low",
   },
   {
     name: "Torchlight Infinite",
     description: "A free-to-play ARPG set in the beloved Torchlight universe. Experience fast-paced combat, colorful environments, and endless loot hunting adventures.",
-    image: "https://images.pexels.com/photos/1298601/pexels-photo-1298601.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/QPMSITX.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
     playerCount: "High",
   },
