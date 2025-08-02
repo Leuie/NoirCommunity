@@ -1,11 +1,10 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import { client, teamMembersQuery } from '@/lib/sanity';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 
 interface TeamMember {
   _id: string
