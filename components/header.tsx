@@ -19,7 +19,14 @@ const navigation = [
     ]
   },
   { name: "News", href: "/news" },
-  { name: "Community", href: "/community" },
+  { 
+    name: "Community", 
+    href: "/community",
+    dropdown: [
+      { name: "Community Wall", href: "/community" },
+      { name: "Ravenwatch (ARPG)", href: "/ravenwatch" },
+    ]
+  },
   { name: "Join", href: "/join" },
   { name: "Contact", href: "/contact" },
 ]
