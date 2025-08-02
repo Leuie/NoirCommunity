@@ -25,7 +25,7 @@ const supportedGames = [
     description: "Blizzard's latest entry in the legendary Diablo franchise. Experience the dark world of Sanctuary with endless character customization, challenging dungeons, and epic boss battles.",
     image: "https://4kwallpapers.com/images/walls/thumbs_3t/5969.png?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
-    playerCount: "High",
+    playerCount: "Low",
   },
   {
     name: "Hero Siege",
