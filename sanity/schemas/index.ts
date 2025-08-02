@@ -13,3 +13,6 @@ export const schemaTypes = [
   teamMember,
   blockContent,
 ]
+import {postType} from './postType'
+
+export const schemaTypes = [postType]
