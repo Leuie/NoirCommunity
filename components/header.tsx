@@ -23,7 +23,7 @@ const navigation = [
     name: "Community", 
     href: "/community",
     dropdown: [
-      { name: "Wall", href: "/wall" },
+      { name: "Wall", href: "/community" },
       { name: "Ravenwatch", href: "/ravenwatch" },
     ]
   },
