@@ -1,28 +1,13 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+// For static exports, we need to handle environment variables differently
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://kawpvyebacqujxwbsjad.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imthd3B2eWViYWNxdWp4d2JzamFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxMjE2NzUsImV4cCI6MjA2OTY5NzY3NX0.P4zY2ECJwpyzATxb9L4aDp7_9oAsYQOpM5I1a-ssnNM'
 
 // Check if we have valid Supabase configuration
 const hasSupabaseConfig = () => {
-  // Return false if no environment variables
-  if (!supabaseUrl || !supabaseAnonKey) return false
-  
-  // Return false if still using placeholder values
-  if (supabaseUrl.includes('your_supabase_project_url_here') || 
-      supabaseUrl.includes('your-project-ref') ||
-      supabaseAnonKey.includes('your_supabase_anon_key_here') ||
-      supabaseAnonKey.includes('your-anon-public-key')) {
-    return false
-  }
-  
-  // Validate URL format
-  try {
-    new URL(supabaseUrl)
-    return true
-  } catch {
-    return false
-  }
+  // For static exports, we'll hardcode the check since env vars are embedded at build time
+  return supabaseUrl.includes('kawpvyebacqujxwbsjad.supabase.co') && supabaseAnonKey.length > 100
 }
 
 // Client-side Supabase client
