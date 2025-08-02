@@ -107,19 +107,19 @@ export default function ContactPage() {
                 <CardContent className="space-y-6">
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-                    <p className="text-gray-300">contact@noirgaming.com</p>
+                    <p className="text-gray-300">contact@noircommunity.com</p>
                     <p className="text-gray-400 text-sm mt-1">We typically respond within 24 hours</p>
                   </div>
                   
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Community Support</h3>
-                    <p className="text-gray-300">support@noirgaming.com</p>
+                    <p className="text-gray-300">support@nnoircommunity.com</p>
                     <p className="text-gray-400 text-sm mt-1">For technical issues and account help</p>
                   </div>
 
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Business Inquiries</h3>
-                    <p className="text-gray-300">business@noirgaming.com</p>
+                    <p className="text-gray-300">business@noircommunity.com</p>
                     <p className="text-gray-400 text-sm mt-1">Partnerships and sponsorship opportunities</p>
                   </div>
                 </CardContent>
