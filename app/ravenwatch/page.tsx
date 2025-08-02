@@ -23,7 +23,7 @@ const supportedGames = [
   {
     name: "Diablo IV",
     description: "Blizzard's latest entry in the legendary Diablo franchise. Experience the dark world of Sanctuary with endless character customization, challenging dungeons, and epic boss battles.",
-    image: "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imguscdn.gamespress.com/cdn/files/BlizzardLive/2019/10/31172225-acaf1936-19f2-4927-b050-7141f0e0e22d/Diablo_IV_Logo_(1)_png_jpgcopy.jpg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
     playerCount: "High",
   },
