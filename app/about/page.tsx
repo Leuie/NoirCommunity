@@ -32,7 +32,7 @@ const teamMembers = [
     name: "Chuyo",
     role: "Security Architect",
     description: "Cybersecurity Professional by day, Gamer by night.",
-    image: "https://i.imgur.com/sgYVMV6.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+    image: "https://imgur.com/ZgjDtz3.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
   },
 ];
 
