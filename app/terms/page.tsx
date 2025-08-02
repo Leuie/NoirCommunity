@@ -468,9 +468,9 @@ export default function TermsPage() {
                 </p>
                 <div className="bg-muted/20 p-4 rounded-lg">
                   <p className="text-foreground font-semibold mb-2">NOIR Gaming Community</p>
-                  <p className="text-muted-foreground">Email: legal@noircommunity.com</p>
+                  <p className="text-muted-foreground">Email: support@noircommunity.com</p>
                   <p className="text-muted-foreground">General Contact: contact@noircommunity.com</p>
-                  <p className="text-muted-foreground">Moderation Appeals: appeals@noircommunity.com</p>
+                  <p className="text-muted-foreground">Moderation Appeals: support@noircommunity.com</p>
                 </div>
               </div>
             </CardContent>
