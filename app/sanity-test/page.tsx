@@ -30,6 +30,7 @@ export default function SanityTestPage() {
         status: 'success',
         message: 'Successfully connected to Sanity project',
         data: { projectId: 'nbeqhsdj', dataset: 'production' }
+        data: { projectId: 'qgn02sj5', dataset: 'production' }
       })
     } catch (error) {
       results.push({
@@ -208,12 +209,12 @@ export default function SanityTestPage() {
               <strong>If all tests pass:</strong> Your Sanity configuration is working correctly! 
               You can access your Sanity Studio at: 
               <a 
-                href="https://nbeqhsdj.sanity.studio/" 
+                href="https://qgn02sj5.sanity.studio/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neon-blue hover:underline ml-1"
               >
-                https://nbeqhsdj.sanity.studio/
+                https://qgn02sj5.sanity.studio/
               </a>
             </p>
             <p>

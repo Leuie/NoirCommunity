@@ -89,7 +89,7 @@ function TeamSection() {
         <Card key={member._id} className="card-noir flex flex-col items-center text-center p-6">
           <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-neon-purple">
             <img
-              src={member.image ? `https://cdn.sanity.io/images/nbeqhsdj/production/${member.image.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=100&h=100&fit=crop` : `https://i.imgur.com/Kj1YaTI.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`}
+              src={member.image ? `https://cdn.sanity.io/images/qgn02sj5/production/${member.image.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=100&h=100&fit=crop` : `https://i.imgur.com/Kj1YaTI.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`}
               alt={member.name}
               className="absolute inset-0 w-full h-full object-cover"
             />

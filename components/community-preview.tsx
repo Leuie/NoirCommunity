@@ -163,7 +163,7 @@ export function CommunityPreview() {
                 <div className="flex items-center space-x-3">
                   <Avatar className="w-10 h-10">
                     <AvatarImage 
-                      src={post.author.avatar ? `https://cdn.sanity.io/images/nbeqhsdj/production/${post.author.avatar.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=100&h=100&fit=crop` : `https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`} 
+                      src={post.author.avatar ? `https://cdn.sanity.io/images/qgn02sj5/production/${post.author.avatar.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=100&h=100&fit=crop` : `https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`} 
                       alt={post.author.name} 
                     />
                     <AvatarFallback>{post.author.name.slice(0, 2)}</AvatarFallback>

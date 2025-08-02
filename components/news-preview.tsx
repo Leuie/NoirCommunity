@@ -174,7 +174,7 @@ export function NewsPreview() {
             <Card key={article._id} className="card-noir overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={article.mainImage ? `https://cdn.sanity.io/images/nbeqhsdj/production/${article.mainImage.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=400&h=250&fit=crop` : "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"}
+                  src={article.mainImage ? `https://cdn.sanity.io/images/qgn02sj5/production/${article.mainImage.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=400&h=250&fit=crop` : "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"}
                   alt={article.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"

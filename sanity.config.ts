@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'NOIR Gaming Community',
 
-  projectId: 'nbeqhsdj',
+  projectId: 'qgn02sj5',
   dataset: 'production',
 
   apiVersion: '2024-01-01',
