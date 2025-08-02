@@ -30,8 +30,8 @@ const teamMembers = [
   },
     {
     name: "Chuyo",
-    role: "Content Strategist",
-    description: "Conceives and iterates on the latest graphics. Creating engaging content for the community.",
+    role: "Security Architect",
+    description: "Cybersecurity Professional by day, Gamer by night.",
     image: "https://i.imgur.com/sgYVMV6.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
   },
 ];
