@@ -62,7 +62,7 @@ export default function CommunityPage() {
                     Connect with fellow gamers, share your achievements, and be part of the conversation on our Discord server.
                   </p>
                   <Button asChild className="btn-primary">
-                    <Link href="https://discord.gg/noircommunity" target="_blank">
+                    <Link href="https://discord.noircommunity.com" target="_blank">
                       Join Discord Server
                     </Link>
                   </Button>
