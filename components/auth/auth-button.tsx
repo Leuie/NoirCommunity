@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { createSupabaseClient } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { User, LogOut } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+
 export function AuthButton() {
   const [user, setUser] = useState<any>(null)
   const [loading, setLoading] = useState(true)
@@ -42,6 +42,9 @@ export function AuthButton() {
     try {
       const { error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}`
+        }
       })
       if (error) throw error
     } catch (error) {
@@ -63,9 +66,9 @@ export function AuthButton() {
   // If no Supabase configuration, show placeholder
   if (!supabaseClient) {
     return (
-      <Button variant="outline" disabled>
+      <Button variant="outline" disabled className="text-red-400">
         <User className="w-4 h-4 mr-2" />
-        Auth Disabled
+        Config Missing
       </Button>
     )
   }
