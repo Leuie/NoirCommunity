@@ -199,7 +199,7 @@ export default function JoinPage() {
               Games We <span className="neon-text">Play</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From competitive esports to cooperative adventures, we cover the games that matter to adult gamers.
+              From competitive mmos, arpgs or cooperative adventures, we cover the games that matter to the community.
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export default function JoinPage() {
               What Our <span className="neon-text">Members</span> Say
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real testimonials from adult gamers who found their gaming home with <span className="font-jarvish-blurry neon-text">NOIR</span>.
+              Real testimonials from gamers who found their home with <span className="font-jarvish-blurry neon-text">NOIR</span>.
             </p>
           </div>
 
