@@ -8,17 +8,17 @@ import { supabase } from '@/lib/supabase'
 export function AuthButton() {
   const [user, setUser] = useState<any>(null)
   const [loading, setLoading] = useState(true)
-  const supabase = createSupabaseClient()
+  const supabaseClient = createSupabaseClient()
 
   useEffect(() => {
-    if (!supabase) {
+    if (!supabaseClient) {
       setLoading(false)
       return
     }
 
     // Get initial session
     const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
+      const { data: { session } } = await supabaseClient.auth.getSession()
       setUser(session?.user ?? null)
       setLoading(false)
     }
@@ -26,7 +26,7 @@ export function AuthButton() {
     getSession()
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+    const { data: { subscription } } = supabaseClient.auth.onAuthStateChange(
       async (event, session) => {
         setUser(session?.user ?? null)
         setLoading(false)
@@ -34,13 +34,13 @@ export function AuthButton() {
     )
 
     return () => subscription.unsubscribe()
-  }, [supabase.auth])
+  }, [supabaseClient])
 
   const handleSignIn = async () => {
-    if (!supabase) return
+    if (!supabaseClient) return
     
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: `${window.location.origin}/auth/callback`
@@ -53,10 +53,10 @@ export function AuthButton() {
   }
 
   const handleSignOut = async () => {
-    if (!supabase) return
+    if (!supabaseClient) return
     
     try {
-      const { error } = await supabase.auth.signOut()
+      const { error } = await supabaseClient.auth.signOut()
       if (error) throw error
     } catch (error) {
       console.error('Error signing out:', error)
@@ -64,11 +64,11 @@ export function AuthButton() {
   }
 
   // If no Supabase configuration, show placeholder
-  if (!supabase) {
+  if (!supabaseClient) {
     return (
       <Button variant="outline" disabled>
         <User className="w-4 h-4 mr-2" />
-        Configure Supabase
+        Auth Disabled
       </Button>
     )
   }
