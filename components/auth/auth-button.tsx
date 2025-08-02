@@ -65,7 +65,7 @@ export function AuthButton() {
   if (!user) {
     return (
       <Button onClick={handleSignIn} size="sm" className="btn-primary">
-        Sign In
+        Login
       </Button>
     )
   }

@@ -6,7 +6,6 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { SocialLinks } from "@/components/social-links"
 import { AuthButton } from "@/components/auth/auth-button"
 
@@ -139,11 +138,10 @@ export function Header() {
 
         {/* Right side - Social Links and Theme Toggle */}
         <div className="flex items-center space-x-4">
-          <AuthButton />
           <div className="hidden lg:block">
             <SocialLinks />
           </div>
-          <ThemeToggle />
+          <AuthButton />
           
           {/* Mobile menu button */}
           <div className="md:hidden">

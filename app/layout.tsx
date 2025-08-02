@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { FloatingThemeToggle } from '@/components/floating-theme-toggle';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -86,6 +87,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <FloatingThemeToggle />
           </div>
         </ThemeProvider>
       </body>
