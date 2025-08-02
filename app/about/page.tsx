@@ -3,10 +3,6 @@
 import * as React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { client, teamMembersQuery } from '@/lib/sanity';
-
 
 interface TeamMember {
   _id: string
