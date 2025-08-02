@@ -1,17 +1,12 @@
 'use client';
 
 import * as React from 'react';
-import { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { client, teamMembersQuery } from '@/lib/sanity';
 
-export const metadata: Metadata = {
-  title: 'About NOIR Gaming Community',
-  description: 'Learn about the NOIR Gaming Community\'s mission, values, what we offer, and why you should join our passionate gaming family.',
-};
 
 interface TeamMember {
   _id: string
