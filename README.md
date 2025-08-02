@@ -2,10 +2,10 @@
 
 Welcome to the official repository for the **NOIR Community Gaming Website**, a dynamic hub built to unite gamers, creators, and developers under a shared digital banner. This project is designed to be scalable, content-rich, and community-driven — powered by modern web technologies.
 
-## 🌐 Live Site
+## Live Site
 Visit the production site: [www.noircommunity.com](https://www.noircommunity.com)
 
-## 🎯 Purpose
+## Purpose
 
 The NOIR Community Gaming Portal serves as a central platform for:
 - Showcasing community-driven content, events, and media
@@ -20,7 +20,7 @@ Do not write code that will trigger this error: "Warning: Extra attributes from 
 By default, the website template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
 Use icons from lucide-react for logos unless otherwise prompted.
 
-## 🛠️ Tech Stack
+## 🛠Tech Stack
 
 | Technology         | Purpose                                                  |
 |--------------------|----------------------------------------------------------|
@@ -32,14 +32,14 @@ Use icons from lucide-react for logos unless otherwise prompted.
 | **Sanity CMS**     | Headless content management system for and flexibility   |
 | **CSS Transitions**| Smooth animations and visual polish                      |
 
-## 👥 Who It's For
+## Who It's For
 
 - **Gamers** looking for a curated, immersive experience
 - **NOIR Content Creators** who want to contribute media and updates
 - **Developers** interested in contributing to an open-source gaming platform
 - **Community Leaders** managing events, announcements, and engagement
 
-## 🚀 Features
+## Features
 
 - Real-time content updates via Sanity CMS
 - User authentication and data management with Supabase
@@ -48,7 +48,7 @@ Use icons from lucide-react for logos unless otherwise prompted.
 - SEO meta + OG tags for discoverability
 - Smooth scrolling and page transitions
 
-## 📌 To Do
+## To Do
 
 Here’s a running list of upcoming tasks and enhancements:
 
@@ -74,7 +74,7 @@ Here’s a running list of upcoming tasks and enhancements:
 
 Feel free to fork, contribute, or reach out with ideas. This project is built for the community, and by the community.
 
-## 🔗 Social Links
+## Social Links
 
 Stay connected with the NOIR Community:
 
