@@ -4,6 +4,12 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.cache = false;
+    }
+    return config;
+  },
   images: { unoptimized: true },
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
