@@ -28,7 +28,16 @@ const teamMembers = [
     description: "Conceives and iterates on the latest graphics. Creating engaging content for the community.",
     image: "https://i.imgur.com/sgYVMV6.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
   },
+    {
+    name: "Chuyo",
+    role: "Content Strategist",
+    description: "Conceives and iterates on the latest graphics. Creating engaging content for the community.",
+    image: "https://i.imgur.com/sgYVMV6.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+  },
 ];
+
+
+
 
 export default function AboutPage() {
   return (
