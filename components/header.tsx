@@ -23,8 +23,8 @@ const navigation = [
     name: "Community", 
     href: "/community",
     dropdown: [
-      { name: "Community Wall", href: "/community" },
-      { name: "Ravenwatch (ARPG)", href: "/ravenwatch" },
+      { name: "Wall", href: "/wall" },
+      { name: "Ravenwatch", href: "/ravenwatch" },
     ]
   },
   { name: "Join", href: "/join" },
