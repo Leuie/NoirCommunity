@@ -44,7 +44,7 @@ const supportedGames = [
   {
     name: "No Rest For The Wicked",
     description: "A dark fantasy ARPG with stunning hand-drawn visuals. Explore a plague-ridden kingdom and uncover the truth behind the spreading madness.",
-    image: "https://imgur.com/CzgjxyX.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/mnbeznG.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "Active",
     playerCount: "Medium",
   },
@@ -58,7 +58,7 @@ const supportedGames = [
   {
     name: "Path of Exile II",
     description: "The highly anticipated sequel featuring a new seven-act campaign, updated graphics, and refined gameplay mechanics while maintaining the depth that made the original legendary.",
-    image: "https://i.imgur.com/yLpjE6z.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
+    image: "https://imgur.com/yLpjE6z.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
     status: "New",
     playerCount: "Very High",
   },
