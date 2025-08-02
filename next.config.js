@@ -5,9 +5,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   webpack: (config, { dev }) => {
-    if (dev) {
-      config.cache = false;
-    }
+    // Disable all webpack caching to prevent I/O errors
+    config.cache = false;
     return config;
   },
   images: { unoptimized: true },
