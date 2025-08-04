@@ -1,5 +1,11 @@
+![NOIR]([image-url](https://github.com/Leuie/NoirCommunity/blob/main/public/N.png))
+
+![Last Commit](https://img.shields.io/github/last-commit/Leuie/NoirCommunity?color=brightgreen)
+
 # NOIR Community Gaming Portal
 
+
+## About
 Welcome to the official repository for the **NOIR Community Gaming Website**, a dynamic hub built to unite gamers, creators, and developers under a shared digital banner. This project is designed to be scalable, content-rich, and community-driven. Powered by modern web technologies.
 
 ## Live Site
@@ -12,13 +18,6 @@ The NOIR Community Gaming Portal serves as a central platform for:
 - Hosting game-related resources, updates, and announcements
 - Providing a sleek, immersive experience for gamers and developers alike
 - Encouraging collaboration and creativity within the NOIR ecosystem
-
-If using AI to assist with design, make sure this prompt is always preceding your query.
-For all designs I ask you to make, have them be beautiful, not cookie cutter. Iterate content that is fully featured and worthy for production.
-When using client-side hooks (useState and useEffect) in a component that's being treated as a Server Component by Next.js, always add the "use client" directive at the top of the file.
-Do not write code that will trigger this error: "Warning: Extra attributes from the server: %s%s""class,style"
-By default, the website template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
-Use icons from lucide-react for logos unless otherwise prompted.
 
 ## 🛠Tech Stack
 
@@ -84,6 +83,17 @@ Stay connected with the NOIR Community:
 - Twitch: `twitch.tv/noircommunity`
 - Instagram: `@noircommunity`
 
+## Contributing
+
+```Important Prompt
+### If you are using AI to assist with design and pull requests. Make sure this prompt is always preceding your initial query.
+
+For all designs I ask you to make, have them be beautiful, not cookie cutter. Iterate content that is fully featured and worthy for production.
+When using client-side hooks (useState and useEffect) in a component that's being treated as a Server Component by Next.js, always add the "use client" directive at the top of the file.
+Do not write code that will trigger this error: "Warning: Extra attributes from the server: %s%s""class,style"
+By default, the website template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+Use icons from lucide-react for logos unless otherwise prompted.
+```
 
 ```markdown
 ### Adding New Pages
@@ -92,3 +102,6 @@ Stay connected with the NOIR Community:
 2. Add a `page.tsx` file with your component
 3. Update navigation in `components/header.tsx` (already done for About page)
 ```
+Please read through our contribution guidelines before starting a pull request. We welcome contributions of all kinds, not just code! If you're stuck for ideas, look for the good first issue label on issues in the repository. If you have any questions about the project, feel free to ask them on the community Discord. Before creating your own issue or pull request, always check to see if one already exists! Don't rush contributions, take your time and ensure you're doing it correctly.
+
+
