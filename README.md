@@ -66,10 +66,6 @@ The NOIR Community Gaming Portal serves as a central platform for:
    PAYLOAD_SECRET=your-secret-key-here
    DATABASE_URI=mongodb://localhost:27017/noir-community
    NEXT_PUBLIC_PAYLOAD_URL=http://localhost:3001
-   
-   # Supabase
-   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
    ```
 
 3. **Start Payload CMS server:**
@@ -107,22 +103,6 @@ Here's a running list of upcoming tasks and enhancements:
 - [ ] Set up MongoDB database for Payload
 - [ ] Create initial admin user for Payload
 - [ ] Implement rich text rendering for blog posts
-- [ ] Integrate [FullCalendar.js](https://fullcalendar.io/) for event scheduling
-- [ ] Aggregate gaming news using NewsAPI with feeds from:
-  - IGN, Gamespot, Polygon, Kotaku, Eurogamer, Video Games Chronicle, Rock Paper Shotgun, The Verge Gaming, GamesRadar+, Game Informer
-  - Card-based layout with tag filters (MMO, ARPG, MOBA, FPS, RPG, Action, Sports, Indie, TCG)
-  - Hover summaries + clickable articles
-  - Utilize [news_aggregator](https://github.com/abhinxvz/news_aggregator) for backend logic
-- [ ] Integrate Spreadshirt/Shopify for community merchandise (shirts, hoodies, hats)
-- [ ] Embed live Twitch/YouTube streams from featured community members
-- [ ] Build blog/article section for long-form content
-- [ ] Build guide section for long-form content (this may become its own application)
-- [ ] Create admin dashboard for content moderation
-- [ ] Implement user profiles and avatars
-- [ ] Add community forum or discussion board
-- [ ] Add dark/light mode toggle
-- [ ] Optimize SEO and metadata
-- [ ] Write unit and integration tests for key components
 
 ---
 
