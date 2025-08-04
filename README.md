@@ -1,6 +1,9 @@
-![NOIR](https://github.com/Leuie/NoirCommunity/blob/main/public/N.png?raw=true)
+<img src="https://github.com/Leuie/NoirCommunity/blob/main/public/N.png?raw=true" alt="NOIR" width="20%" />
 
 ![Last Commit](https://img.shields.io/github/last-commit/Leuie/NoirCommunity?color=brightgreen)
+![Contributors](https://img.shields.io/github/contributors/Leuie/NoirCommunity?color=blue)
+![Powered by Cloudflare Workers](https://img.shields.io/badge/Powered%20by-Workers-orange?logo=cloudflare)
+
 
 # NOIR Community Gaming Portal
 
