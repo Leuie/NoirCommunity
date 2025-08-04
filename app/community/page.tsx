@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { CommunityPreview } from '@/components/community-preview'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Users, MessageSquare, TrendingUp } from 'lucide-react'

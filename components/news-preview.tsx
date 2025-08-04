@@ -3,57 +3,61 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { fetchPosts, PayloadPost } from "@/lib/payload"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, ArrowRight, ExternalLink } from "lucide-react"
+import { client, newsQuery } from "@/lib/sanity"
+
+interface NewsArticle {
+  _id: string
+  title: string
+  excerpt: string
+  slug: { current: string }
+  mainImage?: any
+  publishedAt: string
+  author?: {
+    name: string
+    image?: any
+  }
+  category: string
+  readTime?: string
+  source?: string
+}
 
 const categories = ["All", "MMO", "ARPG", "MOBA", "FPS", "RPG", "Action", "Sports", "Indie", "TCG"]
 
 // Fallback data in case Sanity is not available
 const fallbackArticles = [
   {
-    id: "1",
+    _id: "1",
     title: "The Future of Gaming: What to Expect in 2025",
     excerpt: "From AI-powered NPCs to revolutionary VR experiences, discover what's coming next in the gaming industry.",
-    slug: "future-of-gaming-2025",
+    slug: { current: "future-of-gaming-2025" },
     category: "industry",
-    author: "Gaming Analyst",
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    publishedAt: new Date().toISOString(),
     readTime: "5 min read",
     source: "The Verge Gaming",
-    content: {},
-    status: "published" as const,
   },
   {
-    id: "2",
+    _id: "2",
     title: "Top 10 Indie Games That Deserve Your Attention",
     excerpt: "Hidden gems from independent developers that are pushing the boundaries of creativity and gameplay.",
-    slug: "top-indie-games",
+    slug: { current: "top-indie-games" },
     category: "indie",
-    author: "Indie Reviewer",
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    publishedAt: new Date().toISOString(),
     readTime: "8 min read",
     source: "Polygon",
-    content: {},
-    status: "published" as const,
   },
   {
-    id: "3",
+    _id: "3",
     title: "Esports Championship: Record-Breaking Viewership",
     excerpt: "The latest esports tournament shattered all previous records with millions of viewers worldwide.",
-    slug: "esports-championship",
+    slug: { current: "esports-championship" },
     category: "esports",
-    author: "Esports Reporter",
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    publishedAt: new Date().toISOString(),
     readTime: "3 min read",
     source: "Kotaku",
-    content: {},
-    status: "published" as const,
   },
 ]
 
@@ -86,14 +90,14 @@ function getCategoryDisplayName(category: string) {
 }
 
 export function NewsPreview() {
-  const [articles, setArticles] = React.useState<PayloadPost[]>([])
+  const [articles, setArticles] = React.useState<NewsArticle[]>([])
   const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     async function fetchArticles() {
       try {
-        const posts = await fetchPosts(6)
-        setArticles(posts.length > 0 ? posts : fallbackArticles)
+        const data = await client.fetch(newsQuery)
+        setArticles(data.length > 0 ? data.slice(0, 3) : fallbackArticles)
       } catch (error) {
         console.log('Using fallback data:', error)
         setArticles(fallbackArticles)
@@ -167,10 +171,10 @@ export function NewsPreview() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {articles.map((article) => (
-            <Card key={article.id} className="card-noir overflow-hidden">
+            <Card key={article._id} className="card-noir overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={article.featuredImage?.url || "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"}
+                  src={article.mainImage ? `https://cdn.sanity.io/images/qgn02sj5/production/${article.mainImage.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=400&h=250&fit=crop` : "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"}
                   alt={article.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -184,10 +188,10 @@ export function NewsPreview() {
               
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
-                  <span>{article.source || `by ${article.author}` || 'NOIR Community'}</span>
+                  <span>{article.source || (article.author?.name ? `by ${article.author.name}` : 'NOIR Community')}</span>
                   <div className="flex items-center space-x-1">
                     <Clock className="w-3 h-3" />
-                    <span>{formatTimeAgo(article.createdAt)}</span>
+                    <span>{formatTimeAgo(article.publishedAt)}</span>
                   </div>
                 </div>
                 <CardTitle className="text-lg font-semibold leading-tight hover:text-neon-purple transition-colors cursor-pointer">
@@ -202,12 +206,10 @@ export function NewsPreview() {
                 
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground">{article.readTime || '5 min read'}</span>
-                  <Link href={`/${article.slug}`}>
-                    <Button variant="ghost" size="sm" className="text-neon-purple hover:text-neon-purple hover:bg-neon-purple/10">
-                      Read More
-                      <ExternalLink className="ml-1 w-3 h-3" />
-                    </Button>
-                  </Link>
+                  <Button variant="ghost" size="sm" className="text-neon-purple hover:text-neon-purple hover:bg-neon-purple/10">
+                    Read More
+                    <ExternalLink className="ml-1 w-3 h-3" />
+                  </Button>
                 </div>
               </CardContent>
             </Card>

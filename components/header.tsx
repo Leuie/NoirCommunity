@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SocialLinks } from "@/components/social-links"
+import { AuthButton } from "@/components/auth/auth-button"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -134,6 +135,8 @@ export function Header() {
 
         {/* Right side - Social Links and Theme Toggle */}
         <div className="flex items-center space-x-4">
+          <AuthButton />
+          
           {/* Mobile menu button */}
           <div className="md:hidden">
             <Button
