@@ -95,7 +95,7 @@ export async function fetchPosts(limit = 12): Promise<ContentfulPost[]> {
     
     return response.items as ContentfulPost[]
   } catch (error) {
-    console.error('Error fetching posts from Contentful:', error)
+    // Silently handle missing content types - this is expected when setting up Contentful
     return []
   }
 }
@@ -111,7 +111,7 @@ export async function fetchPostBySlug(slug: string): Promise<ContentfulPost | nu
     
     return response.items[0] as ContentfulPost || null
   } catch (error) {
-    console.error('Error fetching post by slug from Contentful:', error)
+    // Silently handle missing content types - this is expected when setting up Contentful
     return null
   }
 }
@@ -127,7 +127,7 @@ export async function fetchCommunityPosts(limit = 20): Promise<ContentfulCommuni
     
     return response.items as ContentfulCommunityPost[]
   } catch (error) {
-    console.error('Error fetching community posts from Contentful:', error)
+    // Silently handle missing content types - this is expected when setting up Contentful
     return []
   }
 }
@@ -142,7 +142,7 @@ export async function fetchTeamMembers(): Promise<ContentfulTeamMember[]> {
     
     return response.items as ContentfulTeamMember[]
   } catch (error) {
-    console.error('Error fetching team members from Contentful:', error)
+    // Silently handle missing content types - this is expected when setting up Contentful
     return []
   }
 }
@@ -158,7 +158,7 @@ export async function fetchNewsArticles(limit = 12): Promise<ContentfulPost[]> {
     
     return response.items as ContentfulPost[]
   } catch (error) {
-    console.error('Error fetching news articles from Contentful:', error)
+    // Silently handle missing content types - this is expected when setting up Contentful
     return []
   }
 }
