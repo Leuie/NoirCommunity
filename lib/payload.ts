@@ -1,5 +1,10 @@
 const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:3001'
 
+// Log the Payload URL being used (helpful for debugging)
+if (typeof window === 'undefined') {
+  console.log('Using Payload URL:', PAYLOAD_URL)
+}
+
 export interface PayloadPost {
   id: string
   title: string
