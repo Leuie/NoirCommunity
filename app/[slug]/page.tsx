@@ -6,7 +6,29 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
   try {
     const posts = await fetchPosts(100); // Fetch more posts to ensure we get all slugs
-    return posts.map((post) => ({
+    
+    if (posts && posts.length > 0) {
+      return posts.map((post) => ({
+        slug: post.slug,
+      }));
+    }
+    
+    // Fallback to predefined slugs if no posts are fetched
+    return [
+      { slug: 'top-indie-games' },
+      { slug: 'welcome-to-noir' },
+      { slug: 'getting-started' }
+    ];
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    // Return fallback slugs when fetch fails
+    return [
+      { slug: 'top-indie-games' },
+      { slug: 'welcome-to-noir' },
+      { slug: 'getting-started' }
+    ];
+  }
+}
       slug: post.slug,
     }));
   } catch (error) {
