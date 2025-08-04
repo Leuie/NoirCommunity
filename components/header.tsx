@@ -20,6 +20,7 @@ const navigation = [
     ]
   },
   { name: "News", href: "/news" },
+  { name: "Blog", href: "/blog" },
   { 
     name: "Community", 
     href: "/community",
