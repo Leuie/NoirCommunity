@@ -29,13 +29,6 @@ export async function generateStaticParams() {
     ];
   }
 }
-      slug: post.slug,
-    }));
-  } catch (error) {
-    console.error('Error generating static params:', error);
-    return []; // Return empty array if there's an error
-  }
-}
 
 export default async function PostPage({
   params,
