@@ -1,4 +1,4 @@
-![NOIR]([image-url](https://github.com/Leuie/NoirCommunity/blob/main/public/N.png))
+![NOIR](https://github.com/Leuie/NoirCommunity/blob/main/public/N.png?raw=true)
 
 ![Last Commit](https://img.shields.io/github/last-commit/Leuie/NoirCommunity?color=brightgreen)
 
@@ -19,7 +19,7 @@ The NOIR Community Gaming Portal serves as a central platform for:
 - Providing a sleek, immersive experience for gamers and developers alike
 - Encouraging collaboration and creativity within the NOIR ecosystem
 
-## 🛠Tech Stack
+## Tech Stack
 
 | Technology         | Purpose                                                  |
 |--------------------|----------------------------------------------------------|
