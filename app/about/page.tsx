@@ -3,7 +3,6 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { client, teamMembersQuery } from '@/lib/sanity';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -55,8 +54,8 @@ function TeamSection() {
   React.useEffect(() => {
     async function fetchTeamMembers() {
       try {
-        const data = await client.fetch(teamMembersQuery)
-        setTeamMembers(data.length > 0 ? data : fallbackTeamMembers)
+        // TODO: Replace with Payload CMS API call
+        setTeamMembers(fallbackTeamMembers)
       } catch (error) {
         console.log('Using fallback data:', error)
         setTeamMembers(fallbackTeamMembers)

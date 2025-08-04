@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { MessageCircle, Heart, Share2, ArrowRight } from "lucide-react"
-import { client, communityPostsQuery } from "@/lib/sanity"
 
 interface CommunityPost {
   _id: string
@@ -94,8 +93,8 @@ export function CommunityPreview() {
   React.useEffect(() => {
     async function fetchPosts() {
       try {
-        const data = await client.fetch(communityPostsQuery)
-        setPosts(data.length > 0 ? data.slice(0, 3) : fallbackPosts)
+        // TODO: Replace with Payload CMS API call
+        setPosts(fallbackPosts)
       } catch (error) {
         console.log('Using fallback data:', error)
         setPosts(fallbackPosts)

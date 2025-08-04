@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, ArrowRight, ExternalLink } from "lucide-react"
-import { client, newsQuery } from "@/lib/sanity"
 
 interface NewsArticle {
   _id: string
@@ -96,8 +95,8 @@ export function NewsPreview() {
   React.useEffect(() => {
     async function fetchArticles() {
       try {
-        const data = await client.fetch(newsQuery)
-        setArticles(data.length > 0 ? data.slice(0, 3) : fallbackArticles)
+        // TODO: Replace with Payload CMS API call
+        setArticles(fallbackArticles)
       } catch (error) {
         console.log('Using fallback data:', error)
         setArticles(fallbackArticles)
