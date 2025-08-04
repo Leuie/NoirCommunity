@@ -1,5 +1,6 @@
 <img src="https://github.com/Leuie/NoirCommunity/blob/main/public/N.png?raw=true" alt="NOIR" width="20%" />
 
+![Tests](https://img.shields.io/github/actions/workflow/status/Leuie/NoirCommunity/tests.yml?label=tests&color=brightgreen)
 ![Last Commit](https://img.shields.io/github/last-commit/Leuie/NoirCommunity?color=brightgreen)
 ![Contributors](https://img.shields.io/github/contributors/Leuie/NoirCommunity?color=blue)
 ![Powered by Cloudflare Workers](https://img.shields.io/badge/Powered%20by-Workers-orange?logo=cloudflare)
