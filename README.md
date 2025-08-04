@@ -59,26 +59,44 @@ The NOIR Community Gaming Portal serves as a central platform for:
    npm install
    ```
 
-2. **Set up environment variables:**
+2. **Set up MongoDB:**
+   
+   **Option A: MongoDB Atlas (Recommended for development)**
+   - Sign up at https://www.mongodb.com/atlas
+   - Create a free cluster
+   - Get your connection string
+   
+   **Option B: Local MongoDB**
+   ```bash
+   # macOS
+   brew install mongodb-community
+   brew services start mongodb-community
+   
+   # Ubuntu/Debian  
+   sudo apt-get install mongodb
+   sudo systemctl start mongodb
+   ```
+
+3. **Set up environment variables:**
    Create a `.env.local` file with your configuration:
    ```
    # Payload CMS
    PAYLOAD_SECRET=your-secret-key-here
-   DATABASE_URI=mongodb://localhost:27017/noir-community
+   DATABASE_URI=mongodb+srv://username:password@cluster.mongodb.net/noir-community
    NEXT_PUBLIC_PAYLOAD_URL=http://localhost:3001
    ```
 
-3. **Start Payload CMS server:**
+4. **Start Payload CMS server:**
    ```bash
    npm run payload:dev
    ```
 
-4. **Run the Next.js development server:**
+5. **Run the Next.js development server:**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser:**
+6. **Open your browser:**
    - Next.js app: [http://localhost:3000](http://localhost:3000)
    - Payload admin: [http://localhost:3001/admin](http://localhost:3001/admin)
 
