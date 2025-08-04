@@ -1,6 +1,19 @@
 import { fetchPostBySlug, PayloadPost } from "@/lib/payload";
+import { fetchPosts } from "@/lib/payload";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  try {
+    const posts = await fetchPosts(100); // Fetch more posts to ensure we get all slugs
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return []; // Return empty array if there's an error
+  }
+}
 
 export default async function PostPage({
   params,
