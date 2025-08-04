@@ -3,7 +3,6 @@
 ![Tests](https://img.shields.io/github/actions/workflow/status/Leuie/NoirCommunity/tests.yml?label=tests&color=brightgreen)
 ![Last Commit](https://img.shields.io/github/last-commit/Leuie/NoirCommunity?color=brightgreen)
 ![Contributors](https://img.shields.io/github/contributors/Leuie/NoirCommunity?color=blue)
-![Powered by Cloudflare Workers](https://img.shields.io/badge/Powered%20by-Workers-orange?logo=cloudflare)
 
 
 # NOIR Community Gaming Portal
@@ -32,7 +31,7 @@ The NOIR Community Gaming Portal serves as a central platform for:
 | **Next.js**        | Routing, server-side rendering, and SEO optimization     |
 | **Tailwind CSS**   | Utility-first styling for rapid UI development           |
 | **Supabase**       | Backend-as-a-Service for auth and database               |
-| **Sanity CMS**     | Headless content management system for and flexibility   |
+| **Payload CMS**    | Self-hosted headless CMS for content management          |
 | **CSS Transitions**| Smooth animations and visual polish                      |
 
 ## Who It's For
@@ -44,18 +43,70 @@ The NOIR Community Gaming Portal serves as a central platform for:
 
 ## Features
 
-- Real-time content updates via Sanity CMS
+- Real-time content updates via Payload CMS
 - User authentication and data management with Supabase
 - Responsive design optimized for desktop and mobile
 - Modular architecture for future scalability
 - SEO meta + OG tags for discoverability
 - Smooth scrolling and page transitions
 
+## Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Leuie/NoirCommunity.git
+   cd NoirCommunity
+   npm install
+   ```
+
+2. **Set up environment variables:**
+   Create a `.env.local` file with your configuration:
+   ```
+   # Payload CMS
+   PAYLOAD_SECRET=your-secret-key-here
+   DATABASE_URI=mongodb://localhost:27017/noir-community
+   NEXT_PUBLIC_PAYLOAD_URL=http://localhost:3001
+   
+   # Supabase
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   ```
+
+3. **Start Payload CMS server:**
+   ```bash
+   npm run payload:dev
+   ```
+
+4. **Run the Next.js development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser:**
+   - Next.js app: [http://localhost:3000](http://localhost:3000)
+   - Payload admin: [http://localhost:3001/admin](http://localhost:3001/admin)
+
+## Content Management
+
+Content is managed through Payload CMS. Access your Payload admin panel at:
+[http://localhost:3001/admin](http://localhost:3001/admin)
+
+### Content Types
+
+- **Posts** - Blog posts and articles
+- **Community Posts** - User-generated content
+- **Team Members** - NOIR team information
+- **Media** - File uploads and images
+
 ## To Do
 
-Here’s a running list of upcoming tasks and enhancements:
+Here's a running list of upcoming tasks and enhancements:
 
-- [ ] Add favicon for branding consistency
+- [x] Add favicon for branding consistency
+- [x] Replace Sanity CMS with Payload CMS
+- [ ] Set up MongoDB database for Payload
+- [ ] Create initial admin user for Payload
+- [ ] Implement rich text rendering for blog posts
 - [ ] Integrate [FullCalendar.js](https://fullcalendar.io/) for event scheduling
 - [ ] Aggregate gaming news using NewsAPI with feeds from:
   - IGN, Gamespot, Polygon, Kotaku, Eurogamer, Video Games Chronicle, Rock Paper Shotgun, The Verge Gaming, GamesRadar+, Game Informer
@@ -107,5 +158,3 @@ Use icons from lucide-react for logos unless otherwise prompted.
 3. Update navigation in `components/header.tsx` (already done for About page)
 ```
 Please read through our contribution guidelines before starting a pull request. We welcome contributions of all kinds, not just code! If you're stuck for ideas, look for the good first issue label on issues in the repository. If you have any questions about the project, feel free to ask them on the community Discord. Before creating your own issue or pull request, always check to see if one already exists! Don't rush contributions, take your time and ensure you're doing it correctly.
-
-
