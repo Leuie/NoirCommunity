@@ -31,8 +31,7 @@ The NOIR Community Gaming Portal serves as a central platform for:
 | **React**          | Component-based UI architecture                          |
 | **Next.js**        | Routing, server-side rendering, and SEO optimization     |
 | **Tailwind CSS**   | Utility-first styling for rapid UI development           |
-| **Supabase**       | Backend-as-a-Service for auth and database               |
-| **Sanity CMS**     | Headless content management system for and flexibility   |
+| **Contentful CMS** | Headless content management system for and flexibility   |
 | **CSS Transitions**| Smooth animations and visual polish                      |
 
 ## Who It's For
