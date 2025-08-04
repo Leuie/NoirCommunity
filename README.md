@@ -31,7 +31,7 @@ The NOIR Community Gaming Portal serves as a central platform for:
 | **React**          | Component-based UI architecture                          |
 | **Next.js**        | Routing, server-side rendering, and SEO optimization     |
 | **Tailwind CSS**   | Utility-first styling for rapid UI development           |
-| **Contentful CMS** | Headless content management system for and flexibility   |
+| **Contentful CMS** | Headless content management system for all dynamic content |
 | **CSS Transitions**| Smooth animations and visual polish                      |
 
 ## Who It's For
@@ -43,8 +43,7 @@ The NOIR Community Gaming Portal serves as a central platform for:
 
 ## Features
 
-- Real-time content updates via Sanity CMS
-- User authentication and data management with Supabase
+- Content management via Contentful CMS
 - Responsive design optimized for desktop and mobile
 - Modular architecture for future scalability
 - SEO meta + OG tags for discoverability
@@ -63,12 +62,8 @@ Here’s a running list of upcoming tasks and enhancements:
   - Utilize [news_aggregator](https://github.com/abhinxvz/news_aggregator) for backend logic
 - [ ] Integrate Spreadshirt/Shopify for community merchandise (shirts, hoodies, hats)
 - [ ] Embed live Twitch/YouTube streams from featured community members
-- [ ] Build blog/article section for long-form content
-- [ ] Build guide section for long-form content (this may become its own application)
-- [ ] Create admin dashboard for content moderation
-- [ ] Implement user profiles and avatars
+- [ ] Build guide section for long-form content (Contentful can be used for this, or it may become its own application)
 - [ ] Add community forum or discussion board
-- [ ] Add dark/light mode toggle
 - [ ] Optimize SEO and metadata
 - [ ] Write unit and integration tests for key components
 
