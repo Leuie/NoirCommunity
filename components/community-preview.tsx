@@ -2,63 +2,53 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { fetchCommunityPosts, PayloadCommunityPost } from "@/lib/payload"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { MessageCircle, Heart, Share2, ArrowRight } from "lucide-react"
 
-interface CommunityPost {
-  _id: string
-  content: string
-  author: {
-    name: string
-    avatar?: any
-    badge: string
-  }
-  _createdAt: string
-  likes: number
-  comments: number
-  tags: string[]
-}
-
 // Fallback data
 const fallbackPosts = [
   {
-    _id: "1",
+    id: "1",
     content: "Just hit level 100 in my favorite MMO! The grind was real but totally worth it. Thanks to everyone in the guild for the support! 🎮",
     author: {
       name: "GamerPro2024",
       badge: "veteran",
     },
-    _createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    updatedAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
     likes: 24,
     comments: 8,
-    tags: ["MMO", "Achievement"],
+    tags: [{ tag: "MMO" }, { tag: "Achievement" }],
   },
   {
-    _id: "2",
+    id: "2",
     content: "Amazing tournament last night! Congrats to all participants. The final match was absolutely insane! Can't wait for the next one 🏆",
     author: {
       name: "StreamQueen",
       badge: "streamer",
     },
-    _createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
+    createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
+    updatedAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
     likes: 42,
     comments: 15,
-    tags: ["Tournament", "Esports"],
+    tags: [{ tag: "Tournament" }, { tag: "Esports" }],
   },
   {
-    _id: "3",
+    id: "3",
     content: "Found this gem at a local game store today! Sometimes the best treasures are hiding in plain sight. What's your best gaming find?",
     author: {
       name: "RetroGamer",
       badge: "collector",
     },
-    _createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+    createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+    updatedAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
     likes: 18,
     comments: 12,
-    tags: ["Retro", "Collection"],
+    tags: [{ tag: "Retro" }, { tag: "Collection" }],
   },
 ]
 
@@ -87,14 +77,14 @@ function getBadgeDisplayName(badge: string) {
 }
 
 export function CommunityPreview() {
-  const [posts, setPosts] = React.useState<CommunityPost[]>([])
+  const [posts, setPosts] = React.useState<PayloadCommunityPost[]>([])
   const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     async function fetchPosts() {
       try {
-        // TODO: Replace with Payload CMS API call
-        setPosts(fallbackPosts)
+        const communityPosts = await fetchCommunityPosts(3)
+        setPosts(communityPosts.length > 0 ? communityPosts : fallbackPosts)
       } catch (error) {
         console.log('Using fallback data:', error)
         setPosts(fallbackPosts)
@@ -157,12 +147,12 @@ export function CommunityPreview() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
           {posts.map((post) => (
-            <Card key={post._id} className="card-noir">
+            <Card key={post.id} className="card-noir">
               <CardHeader className="pb-3">
                 <div className="flex items-center space-x-3">
                   <Avatar className="w-10 h-10">
                     <AvatarImage 
-                      src={post.author.avatar ? `https://cdn.sanity.io/images/qgn02sj5/production/${post.author.avatar.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=100&h=100&fit=crop` : `https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`} 
+                      src={post.author.avatar?.url || `https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`} 
                       alt={post.author.name} 
                     />
                     <AvatarFallback>{post.author.name.slice(0, 2)}</AvatarFallback>
@@ -175,7 +165,7 @@ export function CommunityPreview() {
                       </Badge>
                     </div>
                     <CardDescription className="text-xs text-muted-foreground">
-                      {formatTimeAgo(post._createdAt)}
+                      {formatTimeAgo(post.createdAt)}
                     </CardDescription>
                   </div>
                 </div>
@@ -186,9 +176,9 @@ export function CommunityPreview() {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="text-xs">
-                      {tag}
+                  {post.tags?.map((tagObj, index) => (
+                    <Badge key={index} variant="outline" className="text-xs">
+                      {tagObj.tag}
                     </Badge>
                   ))}
                 </div>
