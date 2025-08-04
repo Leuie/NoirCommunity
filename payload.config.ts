@@ -301,6 +301,6 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI || 'mongodb://localhost/noir-community',
+    url: process.env.DATABASE_URI || 'mongodb://localhost/NoirWebsite',
   }),
 })
