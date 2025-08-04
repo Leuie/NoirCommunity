@@ -55,6 +55,13 @@ export interface PayloadTeamMember {
 // Fetch posts from Payload CMS
 export async function fetchPosts(limit = 12): Promise<PayloadPost[]> {
   try {
+    // Check if Payload server is running
+    const healthCheck = await fetch(`${PAYLOAD_URL}/api/health`).catch(() => null)
+    if (!healthCheck) {
+      console.warn('Payload CMS server not running, using fallback data')
+      return []
+    }
+    
     const response = await fetch(`${PAYLOAD_URL}/api/posts?limit=${limit}&where[status][equals]=published&sort=-createdAt`)
     
     if (!response.ok) {
@@ -72,6 +79,13 @@ export async function fetchPosts(limit = 12): Promise<PayloadPost[]> {
 // Fetch single post by slug
 export async function fetchPostBySlug(slug: string): Promise<PayloadPost | null> {
   try {
+    // Check if Payload server is running
+    const healthCheck = await fetch(`${PAYLOAD_URL}/api/health`).catch(() => null)
+    if (!healthCheck) {
+      console.warn('Payload CMS server not running, using fallback data')
+      return null
+    }
+    
     const response = await fetch(`${PAYLOAD_URL}/api/posts?where[slug][equals]=${slug}&where[status][equals]=published`)
     
     if (!response.ok) {
@@ -89,6 +103,13 @@ export async function fetchPostBySlug(slug: string): Promise<PayloadPost | null>
 // Fetch community posts
 export async function fetchCommunityPosts(limit = 20): Promise<PayloadCommunityPost[]> {
   try {
+    // Check if Payload server is running
+    const healthCheck = await fetch(`${PAYLOAD_URL}/api/health`).catch(() => null)
+    if (!healthCheck) {
+      console.warn('Payload CMS server not running, using fallback data')
+      return []
+    }
+    
     const response = await fetch(`${PAYLOAD_URL}/api/community-posts?limit=${limit}&sort=-createdAt`)
     
     if (!response.ok) {
@@ -106,6 +127,13 @@ export async function fetchCommunityPosts(limit = 20): Promise<PayloadCommunityP
 // Fetch team members
 export async function fetchTeamMembers(): Promise<PayloadTeamMember[]> {
   try {
+    // Check if Payload server is running
+    const healthCheck = await fetch(`${PAYLOAD_URL}/api/health`).catch(() => null)
+    if (!healthCheck) {
+      console.warn('Payload CMS server not running, using fallback data')
+      return []
+    }
+    
     const response = await fetch(`${PAYLOAD_URL}/api/team-members?sort=order`)
     
     if (!response.ok) {
