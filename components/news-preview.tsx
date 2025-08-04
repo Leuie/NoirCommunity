@@ -7,57 +7,62 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, ArrowRight, ExternalLink } from "lucide-react"
-import { client, newsQuery } from "@/lib/sanity"
-
-interface NewsArticle {
-  _id: string
-  title: string
-  excerpt: string
-  slug: { current: string }
-  mainImage?: any
-  publishedAt: string
-  author?: {
-    name: string
-    image?: any
-  }
-  category: string
-  readTime?: string
-  source?: string
-}
+import { fetchNewsArticles, ContentfulPost } from "@/lib/contentful"
 
 const categories = ["All", "MMO", "ARPG", "MOBA", "FPS", "RPG", "Action", "Sports", "Indie", "TCG"]
 
 // Fallback data in case Sanity is not available
-const fallbackArticles = [
+const fallbackArticles: ContentfulPost[] = [
   {
-    _id: "1",
-    title: "The Future of Gaming: What to Expect in 2025",
-    excerpt: "From AI-powered NPCs to revolutionary VR experiences, discover what's coming next in the gaming industry.",
-    slug: { current: "future-of-gaming-2025" },
-    category: "industry",
-    publishedAt: new Date().toISOString(),
-    readTime: "5 min read",
-    source: "The Verge Gaming",
+    sys: {
+      id: "1",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    fields: {
+      title: "The Future of Gaming: What to Expect in 2025",
+      slug: "future-of-gaming-2025",
+      excerpt: "From AI-powered NPCs to revolutionary VR experiences, discover what's coming next in the gaming industry.",
+      content: null,
+      author: "The Verge Gaming",
+      category: "industry",
+      publishedAt: new Date().toISOString(),
+      readTime: "5 min read",
+    }
   },
   {
-    _id: "2",
-    title: "Top 10 Indie Games That Deserve Your Attention",
-    excerpt: "Hidden gems from independent developers that are pushing the boundaries of creativity and gameplay.",
-    slug: { current: "top-indie-games" },
-    category: "indie",
-    publishedAt: new Date().toISOString(),
-    readTime: "8 min read",
-    source: "Polygon",
+    sys: {
+      id: "2",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    fields: {
+      title: "Top 10 Indie Games That Deserve Your Attention",
+      slug: "top-indie-games",
+      excerpt: "Hidden gems from independent developers that are pushing the boundaries of creativity and gameplay.",
+      content: null,
+      author: "Polygon",
+      category: "indie",
+      publishedAt: new Date().toISOString(),
+      readTime: "8 min read",
+    }
   },
   {
-    _id: "3",
-    title: "Esports Championship: Record-Breaking Viewership",
-    excerpt: "The latest esports tournament shattered all previous records with millions of viewers worldwide.",
-    slug: { current: "esports-championship" },
-    category: "esports",
-    publishedAt: new Date().toISOString(),
-    readTime: "3 min read",
-    source: "Kotaku",
+    sys: {
+      id: "3",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    fields: {
+      title: "Esports Championship: Record-Breaking Viewership",
+      slug: "esports-championship",
+      excerpt: "The latest esports tournament shattered all previous records with millions of viewers worldwide.",
+      content: null,
+      author: "Kotaku",
+      category: "esports",
+      publishedAt: new Date().toISOString(),
+      readTime: "3 min read",
+    }
   },
 ]
 
@@ -90,13 +95,13 @@ function getCategoryDisplayName(category: string) {
 }
 
 export function NewsPreview() {
-  const [articles, setArticles] = React.useState<NewsArticle[]>([])
+  const [articles, setArticles] = React.useState<ContentfulPost[]>([])
   const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     async function fetchArticles() {
       try {
-        const data = await client.fetch(newsQuery)
+        const data = await fetchNewsArticles()
         setArticles(data.length > 0 ? data.slice(0, 3) : fallbackArticles)
       } catch (error) {
         console.log('Using fallback data:', error)
@@ -171,41 +176,41 @@ export function NewsPreview() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {articles.map((article) => (
-            <Card key={article._id} className="card-noir overflow-hidden">
+            <Card key={article.sys.id} className="card-noir overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={article.mainImage ? `https://cdn.sanity.io/images/qgn02sj5/production/${article.mainImage.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=400&h=250&fit=crop` : "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"}
-                  alt={article.title}
+                  src={article.fields.featuredImage ? `https:${article.fields.featuredImage.fields.file.url}?w=400&h=250&fit=crop` : "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"}
+                  alt={article.fields.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-background/80 text-foreground">
-                    {getCategoryDisplayName(article.category)}
+                    {getCategoryDisplayName(article.fields.category)}
                   </Badge>
                 </div>
               </div>
               
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
-                  <span>{article.source || (article.author?.name ? `by ${article.author.name}` : 'NOIR Community')}</span>
+                  <span>{article.fields.author || 'NOIR Community'}</span>
                   <div className="flex items-center space-x-1">
                     <Clock className="w-3 h-3" />
-                    <span>{formatTimeAgo(article.publishedAt)}</span>
+                    <span>{formatTimeAgo(article.fields.publishedAt)}</span>
                   </div>
                 </div>
                 <CardTitle className="text-lg font-semibold leading-tight hover:text-neon-purple transition-colors cursor-pointer">
-                  {article.title}
+                  {article.fields.title}
                 </CardTitle>
               </CardHeader>
               
               <CardContent className="pt-0">
                 <CardDescription className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  {article.excerpt}
+                  {article.fields.excerpt}
                 </CardDescription>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground">{article.readTime || '5 min read'}</span>
+                  <span className="text-xs text-muted-foreground">{article.fields.readTime || '5 min read'}</span>
                   <Button variant="ghost" size="sm" className="text-neon-purple hover:text-neon-purple hover:bg-neon-purple/10">
                     Read More
                     <ExternalLink className="ml-1 w-3 h-3" />

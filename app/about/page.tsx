@@ -3,59 +3,74 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { client, teamMembersQuery } from '@/lib/sanity';
+import { fetchTeamMembers, ContentfulTeamMember } from '@/lib/contentful';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-interface TeamMember {
-  _id: string
-  name: string
-  role: string
-  description: string
-  image?: any
-  order: number
-}
-
 // Fallback data
-const fallbackTeamMembers = [
+const fallbackTeamMembers: ContentfulTeamMember[] = [
   {
-    _id: "1",
-    name: "Leuie",
-    role: "Founder & Lead Developer",
-    description: "Visionary behind NOIR, passionate about gaming and community building.",
-    order: 1,
+    sys: {
+      id: "1",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    fields: {
+      name: "Leuie",
+      role: "Founder & Lead Developer",
+      description: "Visionary behind NOIR, passionate about gaming and community building.",
+      order: 1,
+    }
   },
   {
-    _id: "2",
-    name: "Ward",
-    role: "Community Manager",
-    description: "The heart of NOIR, ensuring a welcoming and engaging environment for all members.",
-    order: 2,
+    sys: {
+      id: "2",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    fields: {
+      name: "Ward",
+      role: "Community Manager",
+      description: "The heart of NOIR, ensuring a welcoming and engaging environment for all members.",
+      order: 2,
+    }
   },
   {
-    _id: "3",
-    name: "LeerOne",
-    role: "Content Strategist",
-    description: "Conceives and iterates on the latest graphics. Creating engaging content for the community.",
-    order: 3,
+    sys: {
+      id: "3",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    fields: {
+      name: "LeerOne",
+      role: "Content Strategist",
+      description: "Conceives and iterates on the latest graphics. Creating engaging content for the community.",
+      order: 3,
+    }
   },
   {
-    _id: "4",
-    name: "Chuyo",
-    role: "Security Architect",
-    description: "Cybersecurity Professional by day, Gamer by night.",
-    order: 4,
+    sys: {
+      id: "4",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    fields: {
+      name: "Chuyo",
+      role: "Security Architect",
+      description: "Cybersecurity Professional by day, Gamer by night.",
+      order: 4,
+    }
   },
 ];
 
 function TeamSection() {
-  const [teamMembers, setTeamMembers] = React.useState<TeamMember[]>([])
+  const [teamMembers, setTeamMembers] = React.useState<ContentfulTeamMember[]>([])
   const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     async function fetchTeamMembers() {
       try {
-        const data = await client.fetch(teamMembersQuery)
+        const data = await fetchTeamMembers()
         setTeamMembers(data.length > 0 ? data : fallbackTeamMembers)
       } catch (error) {
         console.log('Using fallback data:', error)
@@ -86,20 +101,20 @@ function TeamSection() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {teamMembers.map((member) => (
-        <Card key={member._id} className="card-noir flex flex-col items-center text-center p-6">
+        <Card key={member.sys.id} className="card-noir flex flex-col items-center text-center p-6">
           <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-neon-purple">
             <img
-              src={member.image ? `https://cdn.sanity.io/images/qgn02sj5/production/${member.image.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}?w=100&h=100&fit=crop` : `https://i.imgur.com/Kj1YaTI.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`}
-              alt={member.name}
+              src={member.fields.image ? `https:${member.fields.image.fields.file.url}?w=100&h=100&fit=crop` : `https://i.imgur.com/Kj1YaTI.png?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop`}
+              alt={member.fields.name}
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
-          <CardTitle className="text-xl font-display mb-2">{member.name}</CardTitle>
+          <CardTitle className="text-xl font-display mb-2">{member.fields.name}</CardTitle>
           <CardDescription className="text-sm text-muted-foreground mb-4">
-            {member.role}
+            {member.fields.role}
           </CardDescription>
           <p className="text-sm text-foreground/90 leading-relaxed">
-            {member.description}
+            {member.fields.description}
           </p>
         </Card>
       ))}

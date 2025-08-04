@@ -1,5 +1,4 @@
-import { fetchPostBySlug, PayloadPost } from "@/lib/payload";
-import { fetchPosts } from "@/lib/payload";
+import { fetchPostBySlug, fetchPosts, ContentfulPost } from "@/lib/contentful";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -9,7 +8,7 @@ export async function generateStaticParams() {
     
     if (posts && posts.length > 0) {
       return posts.map((post) => ({
-        slug: post.slug,
+        slug: post.fields.slug,
       }));
     }
     
@@ -36,7 +35,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  let post: PayloadPost | null = null;
+  let post: ContentfulPost | null = null;
   
   try {
     post = await fetchPostBySlug(slug);
@@ -62,11 +61,11 @@ export default async function PostPage({
 
       {/* Post Header */}
       <header className="mb-12">
-        {post.featuredImage && (
+        {post.fields.featuredImage && (
           <div className="mb-8">
             <img
-              src={post.featuredImage.url}
-              alt={post.featuredImage.alt || post.title}
+              src={`https:${post.fields.featuredImage.fields.file.url}`}
+              alt={post.fields.featuredImage.fields.title || post.fields.title}
               className="w-full aspect-video rounded-xl object-cover border border-purple-500/20"
             />
           </div>
@@ -74,22 +73,22 @@ export default async function PostPage({
         
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
-            {post.title}
+            {post.fields.title}
           </h1>
           <div className="flex items-center justify-center space-x-4 text-gray-400">
-            <span>By {post.author}</span>
+            <span>By {post.fields.author}</span>
             <span>•</span>
-            <time dateTime={post.createdAt}>
-              {new Date(post.createdAt).toLocaleDateString('en-US', {
+            <time dateTime={post.fields.publishedAt}>
+              {new Date(post.fields.publishedAt).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
               })}
             </time>
-            {post.readTime && (
+            {post.fields.readTime && (
               <>
                 <span>•</span>
-                <span>{post.readTime}</span>
+                <span>{post.fields.readTime}</span>
               </>
             )}
           </div>
@@ -99,30 +98,30 @@ export default async function PostPage({
       {/* Post Content */}
       <div className="bg-slate-800/30 backdrop-blur border border-purple-500/20 rounded-xl p-8">
         <div className="prose prose-invert prose-purple max-w-none">
-          {post.excerpt && (
+          {post.fields.excerpt && (
             <p className="text-xl text-gray-300 mb-8 leading-relaxed font-medium">
-              {post.excerpt}
+              {post.fields.excerpt}
             </p>
           )}
           
           {/* Rich text content would be rendered here */}
           <div className="text-gray-300 leading-relaxed">
-            {/* For now, showing excerpt as content since we need to implement rich text rendering */}
-            <p>Content from Payload CMS will be rendered here once rich text rendering is implemented.</p>
-            <p>This post is about: {post.excerpt}</p>
+            {/* For now, showing excerpt as content since we need to implement Contentful rich text rendering */}
+            <p>Content from Contentful will be rendered here once rich text rendering is implemented.</p>
+            <p>This post is about: {post.fields.excerpt}</p>
           </div>
           
           {/* Tags */}
-          {post.tags && post.tags.length > 0 && (
+          {post.fields.tags && post.fields.tags.length > 0 && (
             <div className="mt-8 pt-8 border-t border-purple-500/20">
               <h3 className="text-lg font-semibold text-white mb-4">Tags</h3>
               <div className="flex flex-wrap gap-2">
-                {post.tags.map((tagObj, index) => (
+                {post.fields.tags.map((tag, index) => (
                   <span
                     key={index}
                     className="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-sm"
                   >
-                    {tagObj.tag}
+                    {tag}
                   </span>
                 ))}
               </div>
